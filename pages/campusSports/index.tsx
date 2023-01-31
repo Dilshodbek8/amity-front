@@ -1,29 +1,29 @@
-import classes from './style.module.scss';
-import Header from '../../components/Header';
-import Navigation from '../../components/Navigation';
-import Gallery from '../../components/Gallery';
+import classes from "./style.module.scss";
+import Header from "../../components/Header";
+import Navigation from "../../components/Navigation";
+import Gallery from "../../components/Gallery";
 export default function News() {
   const links = [
-    { href: '/studentsLife', rel: 'Students Life' },
-    { href: '/campusTour', rel: 'Campus Tour' },
-    { href: '/transportServices', rel: 'Transport Services' },
-    { href: '/campusSafety', rel: 'Campus Safety' },
-    { href: '/campusSports', rel: 'Sports' },
-    { href: '/campusLibrary', rel: 'Library' },
+    { href: "/studentsLife", rel: "Students Life" },
+    { href: "/campusTour", rel: "Campus Tour" },
+    { href: "/transportServices", rel: "Transport Services" },
+    { href: "/campusSafety", rel: "Campus Safety" },
+    { href: "/campusSports", rel: "Sports" },
+    { href: "/campusLibrary", rel: "Library" },
   ];
   const images = [
-    '/media/images/sport_1.jpg',
-    '/media/images/sport_2.jpg',
-    '/media/images/sport_3.jpg',
-    '/media/images/sport_4.jpg',
-    '/media/images/sport_5.jpg',
-    '/media/images/sport_6.jpg',
-    '/media/images/sport_8.jpg',
-    '/media/images/sport_7.jpg',
+    "/media/images/sport_1.jpg",
+    "/media/images/sport_2.jpg",
+    "/media/images/sport_3.jpg",
+    "/media/images/sport_4.jpg",
+    "/media/images/sport_5.jpg",
+    "/media/images/sport_6.jpg",
+    "/media/images/sport_8.jpg",
+    "/media/images/sport_3.jpg",
   ];
   return (
     <>
-      <Header title={'Students Life'} />
+      <Header title={"Students Life"} />
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_news}>
