@@ -1,0 +1,20 @@
+@import './../../styles/variables.scss';
+.body {
+  padding: 30px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 800px) {
+  .body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .body {
+    grid-template-columns: 1fr;
+    div {
+      width: 100%;
+    }
+  }
+}

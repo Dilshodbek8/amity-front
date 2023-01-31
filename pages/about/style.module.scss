@@ -1,0 +1,16 @@
+@import './../../styles/variables.scss';
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: $mainColor;
+  h2 {
+    line-height: 50px;
+    font-size: 36px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

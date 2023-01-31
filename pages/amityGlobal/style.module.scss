@@ -1,0 +1,35 @@
+@import './../../styles/variables.scss';
+.global {
+  background-color: $mainColor;
+  color: white;
+  text-align: center;
+  &_cards {
+    text-align: start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+    & > div {
+      width: 24%;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .global {
+    &_cards {
+      & > div {
+        width: 47%;
+      }
+    }
+  }
+}
+@media (max-width: 550px) {
+  .global {
+    &_cards {
+      & > div {
+        width: 100%;
+      }
+    }
+  }
+}

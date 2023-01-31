@@ -1,0 +1,74 @@
+@import '../../styles/variables.scss';
+.wrapCards {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 2px 1px rgb(228, 227, 227);
+  transition: 0.3s;
+  overflow: hidden;
+  &:hover {
+    transform: translateY(-3px);
+  }
+  .image {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    img {
+      object-fit: cover;
+    }
+  }
+  .dates {
+    position: absolute;
+    background: $mainColor;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    color: $primaryColor;
+    text-align: center;
+    padding: 0 5px;
+    h5 {
+      font-weight: 700;
+      font-size: 22px;
+    }
+  }
+
+  .category {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    background: $primaryColor;
+    color: $mainColor;
+    font-size: 22px;
+    padding: 3px 10px;
+    font-weight: 700;
+  }
+
+  .foot {
+    width: 70%;
+    padding-left: 12px;
+    p {
+      line-height: 20px;
+      color: $mainColor;
+      padding: 5px 0;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapCards {
+    grid-template-columns: repeat(2, 48%);
+    row-gap: 20px;
+  }
+}
+@media (max-width: 760px) {
+  .wrapCards {
+    grid-template-columns: repeat(1, 97%);
+    row-gap: 20px;
+  }
+}

@@ -1,0 +1,22 @@
+@import './../../styles/variables.scss';
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: $mainColor;
+  h2 {
+    line-height: 50px;
+    font-size: 38px;
+  }
+  p {
+    font-size: 18px;
+  }
+  ul {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    color: $primaryBlue;
+    text-decoration: solid underline;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,13 @@
+@import './../../styles/variables.scss';
+.body {
+  padding: 50px 0;
+}
+
+@media (max-width: 510px) {
+  .body {
+    grid-template-columns: 1fr;
+    &_links {
+      grid-row: 1 / 2;
+    }
+  }
+}

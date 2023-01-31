@@ -1,0 +1,25 @@
+@import './../../styles/variables.scss';
+.nav {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    li {
+      font-size: 18px;
+      color: $mainColor;
+      border-bottom: 1px solid #ccc;
+      padding: 8px 0;
+      a {
+        font-family: sans-serif;
+        padding: 3px 8px;
+        border-left: 5px solid $primaryColor;
+      }
+      &.active {
+        border-color: $primaryColor;
+        a {
+          border-color: $mainColor;
+        }
+      }
+    }
+  }
+}

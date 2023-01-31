@@ -1,0 +1,15 @@
+@import './../../styles/variables.scss';
+.body {
+  color: $mainColor;
+
+  &_img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.5;
+  }
+  p {
+    line-height: 28px;
+    padding: 20px 0;
+    color: rgba(89, 89, 92, 1);
+  }
+}

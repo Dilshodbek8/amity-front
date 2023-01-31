@@ -1,0 +1,36 @@
+@import './../../styles/variables.scss';
+.card {
+  position: relative;
+
+  &_img {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 1;
+    img {
+      transition: 0.5s;
+    }
+  }
+  &:hover &_title {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  &:hover &_img {
+    img {
+      transform: scale(1.1);
+    }
+  }
+  &_title {
+    transition: 0.5s;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(57, 55, 55, 0.472);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+.card {
+  background-color: $primaryBlue;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  gap: 1rem;
+
+  &_img {
+    background: url('./../../public/media/images/campus.jpg');
+    background-position: center;
+    background-size: cover;
+    img {
+      object-fit: cover;
+    }
+  }
+  &_text {
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .card {
+    grid-template-columns: 3fr 4fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    grid-template-columns: 1fr;
+    &_img {
+      aspect-ratio: 1.5;
+    }
+  }
+}

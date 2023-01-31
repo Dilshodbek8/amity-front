@@ -1,0 +1,22 @@
+@import './../../styles/variables.scss';
+.card {
+  display: flex;
+  flex-direction: column;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 1rem;
+      span {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+      }
+      p {
+      }
+    }
+  }
+}
