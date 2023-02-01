@@ -1,7 +1,7 @@
 import useQuery from "./use-query";
 import useMutation from "./use-mutation";
 
-const route = "http://185.8.212.166/api";
+const route = process.env.NEXT_PUBLIC_API;
 
 const routes = {
   banners: `${route}/banner`,

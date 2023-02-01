@@ -14,7 +14,8 @@ const Newcardsingle = (props: NewscardProps) => {
   const day = newDate.getDate();
   const month = newDate.toLocaleString("en-US", { month: "short" });
   const year = newDate.getFullYear();
-  let path = "http://185.8.212.166";
+  console.log(`https://amity.albison.software${props.img}`);
+
   return (
     <>
       <div className={classes.card}>
@@ -24,7 +25,19 @@ const Newcardsingle = (props: NewscardProps) => {
           <h6>{year}</h6>
         </div>
         <div className={classes.image}>
-          {/* <Image src={`${path}${props.img}`} alt={props.img} layout="fill" /> */}
+          <img
+            style={{ width: "100%", height: "100%" }}
+            src={`https://amity.albison.software${props.img}`}
+            alt=""
+          />
+          {/* <Image
+            src={`https://amity.albison.software${props.img}`}
+            alt={props.img}
+            // layout="fill"
+            width={"100"}
+            height={"100"}
+            style={{ width: "100%" }}
+          /> */}
           <p className={classes.category}>{props.categ}</p>
         </div>
         <div className={classes.foot}>
