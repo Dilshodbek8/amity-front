@@ -18,12 +18,12 @@ export default function Partners() {
   ];
   const elems = partners.map((p: string, i: number) => (
     <div className={classes.card_img} key={i}>
-      <a href="">
+      <a href="https://www.albison.uz/">
         <Image
           src={`/media/icons/${p}`}
           alt="partners"
           width={200}
-          height={100}
+          height={115}
         />
       </a>
     </div>

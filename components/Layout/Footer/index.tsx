@@ -1,4 +1,4 @@
-import classes from './footer.module.scss';
+import classes from "./footer.module.scss";
 import {
   logo,
   fLocation,
@@ -9,10 +9,10 @@ import {
   LinkedIn,
   Instagram,
   Telegram,
-} from './../../../public/media/icons';
-import Image from 'next/image';
-import routes, { Links } from '../routes';
-import Link from 'next/link';
+} from "./../../../public/media/icons";
+import Image from "next/image";
+import routes, { Links } from "../routes";
+import Link from "next/link";
 export default function Footer() {
   const links = routes();
   return (
