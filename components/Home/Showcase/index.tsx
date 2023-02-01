@@ -26,14 +26,14 @@ export default function Showcase() {
     //   href: "/apply",
     // },
     {
-      img: "mainCampus.png",
+      img: "campus.jpg",
       title: "Admission open for Academic year 2023-2024",
       text: "Prepare in 3 months with amity pre-foundation course.",
       link: "Apply",
       href: "/apply",
     },
     {
-      img: "mainCampus.png",
+      img: "campus.jpg",
       title: "Admission open for Academic year 2023-2024",
       text: "Prepare in 3 months with amity pre-foundation course.",
       link: "Apply",

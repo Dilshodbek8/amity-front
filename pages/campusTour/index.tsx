@@ -30,7 +30,7 @@ export default function News() {
           <div className={classes.body_card}>
             <div className={classes.body_img}>
               <Image
-                src={"/media/images/campusTour.JPG"}
+                src={"/media/images/campus.jpg"}
                 layout={"fill"}
                 alt={"campus"}
               />

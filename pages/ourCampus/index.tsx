@@ -16,7 +16,7 @@ export default function OurCampus() {
         <div className={classes.body}>
           <div className={classes.body_img}>
             <Image
-              src={"/media/images/mainCampus.jpg"}
+              src={"/media/images/campus.jpg"}
               layout="fill"
               alt="campus"
             />
