@@ -1,67 +1,64 @@
-import classes from './style.module.scss';
-import Header from '../../components/Header';
-import Navigation from '../../components/Navigation';
-import Newscardsingle from './../../components/Newscard/Newcardsingle';
+import classes from "./style.module.scss";
+import Header from "../../components/Header";
+import Navigation from "../../components/Navigation";
+import Newscardsingle from "./../../components/Newscard/Newcardsingle";
+import { useRouter } from "next/router";
+import { GetNewsByCateg, GetNewsCategories } from "./../../api";
 export default function News() {
-  const links = [
-    { href: '/news?ctegory=all', rel: 'All Categories' },
-    { href: '/news?ctegory=Admission', rel: 'Admission' },
-    { href: '/news?ctegory=Application', rel: 'Application' },
-    { href: '/news?ctegory=Competition', rel: 'Competition' },
-    { href: '/news?ctegory=Courses', rel: 'Courses' },
-    { href: '/news?ctegory=Events', rel: 'Events' },
-  ];
+  const { data: categories } = GetNewsCategories();
+  const links = categories?.data?.map((e: any, i: number) => {
+    return {
+      href: `/news?category=${e._id}`,
+      rel: e.title.uz,
+    };
+  });
+  let { query: loc } = useRouter();
+  console.log(loc);
+  let { data: news } = GetNewsByCateg(loc?.category);
+  console.log(news);
+  console.log(news?.data?.data, "news");
+
   const newsdata = [
     {
-      date: 'Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)',
-      img: '/media/images/card.png',
-      categ: 'Category',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+      date: "Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)",
+      img: "/media/images/card.png",
+      categ: "Category",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     },
     {
-      date: 'Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)',
-      img: '/media/images/card.png',
-      categ: 'Category',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+      date: "Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)",
+      img: "/media/images/card.png",
+      categ: "Category",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     },
     {
-      date: 'Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)',
-      img: '/media/images/card.png',
-      categ: 'Category',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+      date: "Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)",
+      img: "/media/images/card.png",
+      categ: "Category",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     },
     {
-      date: 'Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)',
-      img: '/media/images/card.png',
-      categ: 'Category',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+      date: "Mon Nov 14 2022 12:11:05 GMT+0500 (Uzbekistan Standard Time)",
+      img: "/media/images/card.png",
+      categ: "Category",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     },
   ];
   return (
     <>
-      <Header title={'News'} />
+      <Header title={"News"} />
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_news}>
-            {newsdata?.map(
-              (
-                n: {
-                  date: string;
-                  img: string;
-                  categ: string;
-                  text: string;
-                },
-                i: number
-              ) => (
-                <Newscardsingle
-                  key={i}
-                  date={n.date}
-                  text={n.text}
-                  categ={n.categ}
-                  img={n.img}
-                />
-              )
-            )}
+            {news?.data?.data?.map((n: any, i: number) => (
+              <Newscardsingle
+                key={i}
+                date={n.createdAt}
+                text={n.description.uz}
+                categ={n.category}
+                img={n.imagePath.src}
+              />
+            ))}
           </div>
           <div className={classes.body_links}>
             <Navigation links={links} />

@@ -1,7 +1,6 @@
-import React from 'react';
-import classes from './newscard.module.scss';
-import Image from 'next/image';
-import MainTitle from '../Maintitle';
+import React from "react";
+import classes from "./newscard.module.scss";
+import Image from "next/image";
 
 interface NewscardProps {
   date: string;
@@ -13,8 +12,9 @@ interface NewscardProps {
 const Newcardsingle = (props: NewscardProps) => {
   const newDate = new Date(props.date);
   const day = newDate.getDate();
-  const month = newDate.toLocaleString('en-US', { month: 'short' });
+  const month = newDate.toLocaleString("en-US", { month: "short" });
   const year = newDate.getFullYear();
+  let path = "http://185.8.212.166";
   return (
     <>
       <div className={classes.card}>
@@ -24,7 +24,7 @@ const Newcardsingle = (props: NewscardProps) => {
           <h6>{year}</h6>
         </div>
         <div className={classes.image}>
-          <Image src={props.img} alt={props.img} layout="fill" />
+          {/* <Image src={`${path}${props.img}`} alt={props.img} layout="fill" /> */}
           <p className={classes.category}>{props.categ}</p>
         </div>
         <div className={classes.foot}>

@@ -1,50 +1,36 @@
-import Header from '../../components/Header';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import cn from './style.module.scss';
-import MainTitle from './../../components/Maintitle';
+import Header from "../../components/Header";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import cn from "./style.module.scss";
+import MainTitle from "./../../components/Maintitle";
+import { GetFaqs } from "./../../api";
 export default function News() {
+  let { data: faqs } = GetFaqs({ limit: 100, offset: 0 });
+  console.log(faqs?.data?.data);
+
   return (
     <>
-      <Header title={'FAQ'} />
+      <Header title={"FAQ"} />
       <div className="container">
         <div className={cn.body}>
           <MainTitle title="Frequently Asked Questions" />
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>question 1</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography>question 2</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          {faqs?.data?.data?.map((e: any, i: number) => (
+            <Accordion key={i}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id={`panel1a-content`}
+              >
+                <Typography>{e.title.uz}</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>{e.description.uz}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
         </div>
       </div>
     </>

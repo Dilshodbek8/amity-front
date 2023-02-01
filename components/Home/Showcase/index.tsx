@@ -1,7 +1,7 @@
-import classes from './Showcase.module.scss';
-import ShowcaseCard, { ShowcaseProps } from '../ShowcaseCard';
-import MySlider from '../../Slider';
-import { GetBanners } from '../../../api';
+import classes from "./Showcase.module.scss";
+import ShowcaseCard, { ShowcaseProps } from "../ShowcaseCard";
+import MySlider from "../../Slider";
+import { GetBanners } from "../../../api";
 export default function Showcase() {
   const data = [
     // {
@@ -26,15 +26,15 @@ export default function Showcase() {
     //   href: "/apply",
     // },
     {
-      img: 'mainCampus.png',
-      title: 'Admission open for Academic year 2023-2024',
-      text: 'Prepare in 3 months with amity pre-foundation course.',
-      link: 'Apply',
-      href: '/apply',
+      img: "mainCampus.png",
+      title: "Admission open for Academic year 2023-2024",
+      text: "Prepare in 3 months with amity pre-foundation course.",
+      link: "Apply",
+      href: "/apply",
     },
   ];
-  const banners = GetBanners({});
-  console.log(banners, 'banners');
+  const { data: banners } = GetBanners({});
+  console.log(banners, "banners");
 
   const elems = data?.map((d: ShowcaseProps, i: number) => (
     <div className={classes.body} key={i}>
