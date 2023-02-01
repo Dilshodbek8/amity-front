@@ -12,14 +12,14 @@ export default function News() {
     { href: "/campusLibrary", rel: "Library" },
   ];
   const images = [
-    "/media/images/sport_1.jpg",
-    "/media/images/sport_2.jpg",
-    "/media/images/sport_3.jpg",
-    "/media/images/sport_4.jpg",
-    "/media/images/sport_5.jpg",
-    "/media/images/sport_6.jpg",
     "/media/images/sport_8.jpg",
-    "/media/images/sport_3.jpg",
+    "/media/images/sport_8.jpg",
+    "/media/images/sport_8.jpg",
+    "/media/images/sport_8.jpg",
+    "/media/images/sport_8.jpg",
+    "/media/images/sport_8.jpg",
+    "/media/images/sport_8.jpg",
+    "/media/images/sport_8.jpg",
   ];
   return (
     <>

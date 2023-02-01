@@ -15,18 +15,19 @@ export default function Contact() {
       icon: "tel.svg",
       title: "Call us:",
       text: "Tel. +998712079006",
-      link: "tel: +998712079006",
+      link: "tel: +998712079006", 
     },
     {
       icon: "location.svg",
       title: "Address:",
       text: "Tashkent City, Street Labzak, Building-70, 100028, Uzbekistan",
+      link: "https://goo.gl/maps/es5eMqDFqt9UDCcT6",
     },
     {
       icon: "chat.svg",
       title: "Join us:",
       text: "@amityTashkent",
-      link: "",
+      link: "https://t.me/AmityUniversityTashkent",
     },
   ];
   return (

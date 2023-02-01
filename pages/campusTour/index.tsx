@@ -1,38 +1,38 @@
-import classes from './style.module.scss';
-import Header from '../../components/Header';
-import Navigation from '../../components/Navigation';
-import Image from 'next/image';
-import Gallery from '../../components/Gallery';
+import classes from "./style.module.scss";
+import Header from "../../components/Header";
+import Navigation from "../../components/Navigation";
+import Image from "next/image";
+import Gallery from "../../components/Gallery";
 export default function News() {
   const links = [
-    { href: '/studentsLife', rel: 'Students Life' },
-    { href: '/campusTour', rel: 'Campus Tour' },
-    { href: '/transportServices', rel: 'Transport Services' },
-    { href: '/campusSafety', rel: 'Campus Safety' },
-    { href: '/campusSports', rel: 'Campus Sports' },
-    { href: '/campusLibrary', rel: 'Campus Library' },
+    { href: "/studentsLife", rel: "Students Life" },
+    { href: "/campusTour", rel: "Campus Tour" },
+    { href: "/transportServices", rel: "Transport Services" },
+    { href: "/campusSafety", rel: "Campus Safety" },
+    { href: "/campusSports", rel: "Campus Sports" },
+    { href: "/campusLibrary", rel: "Campus Library" },
   ];
   const images = [
-    '/media/images/campusT-1.JPG',
-    '/media/images/campusT-2.JPG',
-    '/media/images/campusT-3.JPG',
-    '/media/images/campusT-4.JPG',
-    '/media/images/campusT-5.JPG',
-    '/media/images/campusT-6.JPG',
-    '/media/images/campusT-7.JPG',
-    '/media/images/campusT-8.JPG',
+    "/media/images/campusT-1.JPG",
+    "/media/images/campusT-2.JPG",
+    "/media/images/campusT-3.JPG",
+    "/media/images/campusT-4.JPG",
+    "/media/images/campusT-5.JPG",
+    "/media/images/campusT-6.JPG",
+    "/media/images/campusT-7.JPG",
+    "/media/images/campusT-8.JPG",
   ];
   return (
     <>
-      <Header title={'Campus Tour'} />
+      <Header title={"Campus Tour"} />
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_card}>
             <div className={classes.body_img}>
               <Image
-                src={'/media/images/campusTour.jpg'}
-                layout={'fill'}
-                alt={'campus'}
+                src={"/media/images/campusTour.JPG"}
+                layout={"fill"}
+                alt={"campus"}
               />
             </div>
             <p>
