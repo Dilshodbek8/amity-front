@@ -6,6 +6,7 @@ const route = process.env.NEXT_PUBLIC_API;
 const routes = {
   banners: `${route}/banner`,
   faq: `${route}/faq`,
+  news: `${route}/news`,
   newsCategories: `${route}/news/categories`,
   newsByCateg: `${route}/news/by-category`,
 };
@@ -19,12 +20,16 @@ export const GetFaqs = (params = {}) => {
   return useQuery(routes.faq, params);
 };
 // news
+export const GetNews = (params = {}) => {
+  return useQuery(routes.news, params);
+};
+
 export const GetNewsCategories = (params = {}) => {
   return useQuery(routes.newsCategories, params);
 };
 
-export const GetNewsByCateg = (id, params = {}) => {
-  return useQuery(`${routes.newsByCateg}/${id}`, params);
+export const GetNewsByCateg = (id, params = {}, options = {}) => {
+  return useQuery(`${routes.newsByCateg}/${id}`, params, options);
 };
 
 // export const GetUser = (id, params = {}, options = {}) => {
