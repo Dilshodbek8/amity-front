@@ -14,7 +14,6 @@ const Newcardsingle = (props: NewscardProps) => {
   const day = newDate.getDate();
   const month = newDate.toLocaleString("en-US", { month: "short" });
   const year = newDate.getFullYear();
-  console.log(`https://amity.albison.software${props.img}`);
 
   return (
     <>
@@ -28,7 +27,7 @@ const Newcardsingle = (props: NewscardProps) => {
           <img
             style={{ width: "100%", height: "100%" }}
             src={`https://amity.albison.software${props.img}`}
-            alt=""
+            alt="news"
           />
           {/* <Image
             src={`https://amity.albison.software${props.img}`}

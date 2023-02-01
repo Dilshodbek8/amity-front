@@ -1,22 +1,22 @@
-import classes from './style.module.scss';
-import MiniLayout from '../../components/MiniLayout';
-import Image from 'next/image';
-import Gallery from '../../components/Gallery';
+import classes from "./style.module.scss";
+import MiniLayout from "../../components/MiniLayout";
+import Image from "next/image";
+import Gallery from "../../components/Gallery";
 
 const images = [
-  '/media/images/campus1.jpg',
-  '/media/images/campus2.jpg',
-  '/media/images/campus3.jpg',
-  '/media/images/campus4.jpg',
+  "/media/images/campus.jpg",
+  "/media/images/campus2.jpg",
+  "/media/images/campus3.jpg",
+  "/media/images/campus4.jpg",
 ];
 export default function OurCampus() {
   return (
     <div>
-      <MiniLayout title={'Our Campus'}>
+      <MiniLayout title={"Our Campus"}>
         <div className={classes.body}>
           <div className={classes.body_img}>
             <Image
-              src={'/media/images/mainCampus.jpg'}
+              src={"/media/images/mainCampus.jpg"}
               layout="fill"
               alt="campus"
             />

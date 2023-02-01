@@ -9,7 +9,6 @@ import MainTitle from "./../../components/Maintitle";
 import { GetFaqs } from "./../../api";
 export default function News() {
   let { data: faqs } = GetFaqs({ limit: 100, offset: 0 });
-  console.log(faqs?.data?.data);
 
   return (
     <>

@@ -34,7 +34,6 @@ export default function Showcase() {
     },
   ];
   const { data: banners } = GetBanners({});
-  console.log(banners, "banners");
 
   const elems = data?.map((d: ShowcaseProps, i: number) => (
     <div className={classes.body} key={i}>
