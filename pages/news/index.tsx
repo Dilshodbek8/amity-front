@@ -55,7 +55,7 @@ export default function News() {
                 key={i}
                 date={n.createdAt}
                 text={n.description.uz}
-                categ={n.category}
+                categ={n.category.title.uz}
                 img={n.imagePath.src}
               />
             ))}
