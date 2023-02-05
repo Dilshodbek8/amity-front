@@ -16,9 +16,9 @@ const Newscard = (props: NewscardProps) => {
       {props.datas.map((dat: any, i: number) => (
         <Newscardsingle
           key={i}
-          date={dat.date}
-          text={dat.text}
-          categ={dat.categ}
+          date={dat?.date}
+          text={dat?.text}
+          categ={dat?.categ}
           img={dat.img}
         />
       ))}

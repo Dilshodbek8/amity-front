@@ -1,4 +1,4 @@
-import classes from './Showcase.module.scss';
+import classes from "./Showcase.module.scss";
 export type ShowcaseProps = {
   img: string;
   title: string;
@@ -21,7 +21,7 @@ export default function ShowcaseCard({
         to top,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-      ), url(/media/images/${img})`,
+      ), url(https://amity.albison.software${img})`,
       }}
     >
       <div className={classes.card_text}>

@@ -6,12 +6,7 @@ const Showcase = dynamic(() => import("../components/Home/Showcase"));
 const Programs = dynamic(() => import("../components/Home/Programs"));
 const News = dynamic(() => import("../components/Home/News"));
 const Informationcard = dynamic(() => import("../components/Informationcard"));
-// import Partners from "../components/Home/Partners";
-// import Contact from "../components/Home/Contact";
-// import Showcase from "../components/Home/Showcase";
-// import Programs from "../components/Home/Programs";
-// import News from "../components/Home/News";
-// import Informationcard from "../components/Informationcard";
+
 export default function Home() {
   return (
     <>

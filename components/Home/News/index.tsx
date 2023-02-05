@@ -3,17 +3,20 @@ import Newscardsingle from "../../Newscard/Newcardsingle";
 import MySlider from "../../Slider";
 import MainTitle from "../../Maintitle";
 import { GetNews } from "@/api";
+import Link from "next/link";
 export default function News() {
   let { data: news } = GetNews();
 
   const e = news?.data?.data?.map((dat: any, i: number) => (
     <div className={classes.card} key={i}>
-      <Newscardsingle
-        date={dat.createdAt}
-        text={dat.description.uz}
-        categ={dat.category.title.uz}
-        img={dat.imagePath.src}
-      />
+      <Link href={`/news/${dat._id}`} key={i}>
+        <Newscardsingle
+          date={dat?.createdAt}
+          text={dat?.description?.uz}
+          categ={dat?.category?.title.uz}
+          img={dat?.imagePath?.src}
+        />
+      </Link>
     </div>
   ));
 

@@ -1,0 +1,55 @@
+@import "./../../styles/variables.scss";
+.body {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: flex-start;
+  padding: 30px 0;
+  gap: 1rem;
+  &_news {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    &_img {
+      width: 100%;
+      img {
+        width: 100%;
+        // aspect-ratio: 1;
+      }
+    }
+    &_text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      div {
+        display: flex;
+        background-color: $primaryColor;
+        align-items: center;
+        gap: 0.5rem;
+        color: $mainColor;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      span {
+        background-color: $mainColor;
+        padding: 3px;
+        color: $primaryColor;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      h2 {
+        color: $mainColor;
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .body {
+    &_news {
+      grid-template-columns: 1fr;
+    }
+  }
+}

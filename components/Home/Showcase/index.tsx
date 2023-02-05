@@ -4,27 +4,6 @@ import MySlider from "../../Slider";
 import { GetBanners } from "../../../api";
 export default function Showcase() {
   const data = [
-    // {
-    //   img: "aboutCard.jfif",
-    //   title: "Inspiring adventure and confidence",
-    //   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit placerat sit purus molestie.",
-    //   link: "Apply",
-    //   href: "/apply",
-    // },
-    // {
-    //   img: "fakeNews.jfif",
-    //   title: "Inspiring adventure and confidence",
-    //   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit placerat sit purus molestie.",
-    //   link: "Apply",
-    //   href: "/apply",
-    // },
-    // {
-    //   img: "fakeNews.jfif",
-    //   title: "Inspiring adventure and confidence",
-    //   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit placerat sit purus molestie.",
-    //   link: "Apply",
-    //   href: "/apply",
-    // },
     {
       img: "campus.jpg",
       title: "Admission open for Academic year 2023-2024",
@@ -41,15 +20,15 @@ export default function Showcase() {
     },
   ];
   const { data: banners } = GetBanners({});
+  console.log(banners?.data);
 
-  const elems = data?.map((d: ShowcaseProps, i: number) => (
+  const elems = banners?.data.map((d: any, i: number) => (
     <div className={classes.body} key={i}>
       <ShowcaseCard
-        img={d?.img}
-        title={d?.title}
-        text={d?.text}
+        img={d?.photo?.src}
+        title={d?.title?.uz}
+        text={d?.title?.uz}
         link={d?.link}
-        href={d?.href}
       />
     </div>
   ));

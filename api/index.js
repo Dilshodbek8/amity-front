@@ -7,6 +7,7 @@ const routes = {
   banners: `${route}/banner`,
   faq: `${route}/faq`,
   news: `${route}/news`,
+  newsOne: `${route}/news/one`,
   newsCategories: `${route}/news/categories`,
   newsByCateg: `${route}/news/by-category`,
 };
@@ -28,6 +29,9 @@ export const GetNewsCategories = (params = {}) => {
   return useQuery(routes.newsCategories, params);
 };
 
+export const GetSingleNews = (id, params = {}, options = {}) => {
+  return useQuery(`${routes.newsOne}/${id}`, params, options);
+};
 export const GetNewsByCateg = (id, params = {}, options = {}) => {
   return useQuery(`${routes.newsByCateg}/${id}`, params, options);
 };
