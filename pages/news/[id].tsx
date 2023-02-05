@@ -3,7 +3,6 @@ import Header from "../../components/Header";
 import Navigation from "../../components/Navigation";
 import { useRouter } from "next/router";
 import { GetSingleNews, GetNewsCategories } from "./../../api";
-import Image from "next/image";
 export default function News() {
   const { data: categories } = GetNewsCategories();
   const links = categories?.data?.map((e: any) => {
@@ -14,7 +13,6 @@ export default function News() {
   });
   let { query } = useRouter();
   const { data: news } = GetSingleNews(query?.id);
-  console.log(news);
   const newDate = new Date(news?.data?.createdAt);
   const day = newDate.getDate();
   const month = newDate.toLocaleString("en-US", { month: "short" });
