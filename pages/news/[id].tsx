@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import parse from "html-react-parser";
 import Navigation from "../../components/Navigation";
 import { useRouter } from "next/router";
+import Loader from "@/components/Loader";
 import { GetSingleNews, GetNewsCategories } from "./../../api";
 export default function News() {
   const { data: categories } = GetNewsCategories();
@@ -18,7 +19,9 @@ export default function News() {
   const day = newDate.getDate();
   const month = newDate.toLocaleString("en-US", { month: "short" });
   const year = newDate.getFullYear();
-
+  if (!news?.data) {
+    return <Loader />;
+  }
   return (
     <>
       <Header title={"News"} />
@@ -27,7 +30,7 @@ export default function News() {
           <div className={classes.body_news}>
             <div className={classes.body_news_img}>
               <img
-                src={`https://amity.albison.software${news?.data?.imagePath?.src}`}
+                src={`${process.env.NEXT_PUBLIC_API_IMG}${news?.data?.imagePath?.src}`}
                 alt="news"
               />
             </div>

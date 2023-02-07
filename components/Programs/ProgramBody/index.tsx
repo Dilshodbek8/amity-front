@@ -15,7 +15,6 @@ export default function ProgramBody() {
     limit: 100,
     offset: 0,
   });
-  console.log(program, "program");
 
   const data = [
     { img: "Cash.svg", name: "Tuition Fees Uzb", title: "32’993’400 UZS" },

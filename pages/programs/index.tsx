@@ -5,7 +5,6 @@ import ProgramBody from "../../components/Programs/ProgramBody";
 import { GetPrograms } from "@/api";
 export default function Programs() {
   const { query } = useRouter();
-  console.log(query.id);
 
   const { data: programs } = GetPrograms({ limit: 100, offset: 0 });
 
@@ -15,7 +14,6 @@ export default function Programs() {
       title: e?.basicInformations[0]?.title?.uz,
     };
   });
-  console.log(mybtn, "btn");
 
   return (
     <>

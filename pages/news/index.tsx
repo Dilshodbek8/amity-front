@@ -5,6 +5,7 @@ import Newscardsingle from "./../../components/Newscard/Newcardsingle";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GetNews, GetNewsByCateg, GetNewsCategories } from "./../../api";
+import Loader from "@/components/Loader";
 export default function News() {
   const { data: categories } = GetNewsCategories();
   const links = categories?.data?.map((e: any) => {
@@ -16,7 +17,9 @@ export default function News() {
   let { query: loc } = useRouter();
   let { data: news } = GetNewsByCateg(loc?.category);
   let { data: allNnews } = GetNews();
-
+  if (!allNnews?.data?.data.length) {
+    return <Loader />;
+  }
   return (
     <>
       <Header title={"News"} />

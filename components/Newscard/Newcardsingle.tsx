@@ -26,7 +26,7 @@ const Newcardsingle = (props: NewscardProps) => {
         <div className={classes.image}>
           <img
             style={{ width: "100%", height: "100%" }}
-            src={`https://amity.albison.software${props.img}`}
+            src={`${process.env.NEXT_PUBLIC_API_IMG}${props.img}`}
             alt="news"
           />
           {/* <Image

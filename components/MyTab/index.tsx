@@ -1,9 +1,9 @@
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { ReactElement } from 'react';
-import classes from './MyTab.module.scss';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { ReactElement } from "react";
+import classes from "./MyTab.module.scss";
 export type TabProps = {
   titles: Array<string>;
   components: Array<ReactElement>;
