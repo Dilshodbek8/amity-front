@@ -12,7 +12,7 @@ export default function News() {
       <Link href={`/news/${dat._id}`} key={i}>
         <Newscardsingle
           date={dat?.createdAt}
-          text={dat?.description?.uz}
+          text={dat?.title?.uz}
           categ={dat?.category?.title.uz}
           img={dat?.imagePath?.src}
         />

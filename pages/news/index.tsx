@@ -38,7 +38,7 @@ export default function News() {
                   <Link href={`/news/${n._id}`} key={i}>
                     <Newscardsingle
                       date={n?.createdAt}
-                      text={n?.description?.uz}
+                      text={n?.title?.uz}
                       categ={n?.category?.title?.uz}
                       img={n?.imagePath?.src}
                     />

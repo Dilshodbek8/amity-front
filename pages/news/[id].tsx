@@ -1,5 +1,6 @@
 import classes from "./single.module.scss";
 import Header from "../../components/Header";
+import parse from "html-react-parser";
 import Navigation from "../../components/Navigation";
 import { useRouter } from "next/router";
 import { GetSingleNews, GetNewsCategories } from "./../../api";
@@ -34,9 +35,9 @@ export default function News() {
               <h2>{news?.data?.title?.uz}</h2>
               <div>
                 <span>{`${day}  ${month} ${year}`}</span>
-                <p>{news?.data?.category}</p>
+                <p>{news?.data?.category?.title?.uz}</p>
               </div>
-              <p>{news?.data?.description?.uz}</p>
+              <p>{parse(`${news?.data?.description?.uz}`)}</p>
             </div>
           </div>
 
