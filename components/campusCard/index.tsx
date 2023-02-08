@@ -1,5 +1,5 @@
-import classes from './campusCard.module.scss';
-import Image from 'next/image';
+import classes from "./campusCard.module.scss";
+import Image from "next/image";
 export type CardProps = {
   img: string;
   title: string;

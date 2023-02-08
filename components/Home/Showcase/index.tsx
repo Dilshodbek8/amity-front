@@ -3,22 +3,6 @@ import ShowcaseCard, { ShowcaseProps } from "../ShowcaseCard";
 import MySlider from "../../Slider";
 import { GetBanners } from "../../../api";
 export default function Showcase() {
-  const data = [
-    {
-      img: "campus.jpg",
-      title: "Admission open for Academic year 2023-2024",
-      text: "Prepare in 3 months with amity pre-foundation course.",
-      link: "Apply",
-      href: "/apply",
-    },
-    {
-      img: "campus.jpg",
-      title: "Admission open for Academic year 2023-2024",
-      text: "Prepare in 3 months with amity pre-foundation course.",
-      link: "Apply",
-      href: "/apply",
-    },
-  ];
   const { data: banners } = GetBanners({});
 
   const elems = banners?.data.map((d: any, i: number) => (

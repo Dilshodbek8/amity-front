@@ -1,15 +1,22 @@
-import classes from './nav.module.scss';
-import routes, { Links } from '../routes';
-import Image from 'next/image';
-import { logo, uz, en, ru, menu } from './../../../public/media/icons';
-import Link from 'next/link';
-import * as React from 'react';
-import Drawer from '@mui/material/Drawer';
-import navModal from './../NavModal/';
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
+import classes from "./nav.module.scss";
+import routes, { Links } from "../routes";
+import Image from "next/image";
+import { logo, uz, en, ru, menu } from "./../../../public/media/icons";
+import Link from "next/link";
+import * as React from "react";
+import Drawer from "@mui/material/Drawer";
+import navModal from "./../NavModal/";
+import { useTranslation } from "next-i18next";
+import i18next from "i18next";
+type Anchor = "top" | "left" | "bottom" | "right";
 
 export default function Nav() {
   const links = routes();
+  const { t } = useTranslation();
+
+  const handleChange = (lang: string) => {
+    i18next.changeLanguage(lang);
+  };
   const [state, setState] = React.useState({
     left: false,
   });
@@ -18,9 +25,9 @@ export default function Nav() {
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
       ) {
         return;
       }
@@ -42,12 +49,30 @@ export default function Nav() {
           ))}
         </ul>
         <div className={classes.nav__langs}>
-          <Image src={uz} width="25" height="25" alt="uz" />
-          <Image src={ru} width="25" height="25" alt="ru" />
-          <Image src={en} width="25" height="25" alt="en" />
+          <Image
+            onClick={() => handleChange("uz")}
+            src={uz}
+            width="25"
+            height="25"
+            alt="uz"
+          />
+          <Image
+            onClick={() => handleChange("ru")}
+            src={ru}
+            width="25"
+            height="25"
+            alt="ru"
+          />
+          <Image
+            onClick={() => handleChange("en")}
+            src={en}
+            width="25"
+            height="25"
+            alt="en"
+          />
         </div>
         <Image
-          onClick={toggleDrawer('left', true)}
+          onClick={toggleDrawer("left", true)}
           src={menu}
           width="25"
           height="25"
@@ -55,9 +80,9 @@ export default function Nav() {
         />
       </div>
       <Drawer
-        anchor={'left'}
-        open={state['left']}
-        onClose={toggleDrawer('left', false)}
+        anchor={"left"}
+        open={state["left"]}
+        onClose={toggleDrawer("left", false)}
       >
         {navModal(toggleDrawer)}
       </Drawer>

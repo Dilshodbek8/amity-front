@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./newscard.module.scss";
-import Image from "next/image";
 
 interface NewscardProps {
   date: string;

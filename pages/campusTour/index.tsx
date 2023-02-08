@@ -3,14 +3,16 @@ import Header from "../../components/Header";
 import Navigation from "../../components/Navigation";
 import Image from "next/image";
 import Gallery from "../../components/Gallery";
+import { useTranslation } from "next-i18next";
 export default function News() {
+  const { t } = useTranslation();
   const links = [
-    { href: "/studentsLife", rel: "Students Life" },
-    { href: "/campusTour", rel: "Campus Tour" },
-    { href: "/transportServices", rel: "Transport Services" },
-    { href: "/campusSafety", rel: "Campus Safety" },
-    { href: "/campusSports", rel: "Campus Sports" },
-    { href: "/campusLibrary", rel: "Campus Library" },
+    { href: "/studentsLife", rel: t("Students Life") },
+    { href: "/campusTour", rel: t("Campus Tour") },
+    { href: "/transportServices", rel: t("Transport Services") },
+    { href: "/campusSafety", rel: t("Campus Safety") },
+    { href: "/campusSports", rel: t("Sports") },
+    { href: "/campusLibrary", rel: t("Library") },
   ];
   const images = [
     "/media/images/campusT-1.JPG",
@@ -24,7 +26,7 @@ export default function News() {
   ];
   return (
     <>
-      <Header title={"Campus Tour"} />
+      <Header title={t("Campus Tour")} />
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_card}>
@@ -36,11 +38,9 @@ export default function News() {
               />
             </div>
             <p>
-              We are a multifaceted university in Tashkent, committed to
-              delivering world-class education and research. At Amity University
-              Tashkent Campus, you’ll gain more than just an outstanding
-              education, you’ll be exposed to a world of opportunities and learn
-              from faculty who are masters in their field.
+              {t(
+                "We are a multifaceted university in Tashkent, committed to delivering world-class education and research. At Amity University Tashkent Campus, you’ll gain more than just an outstanding education, you’ll be exposed to a world of opportunities and learn from faculty who are masters in their field."
+              )}
             </p>
             <iframe
               width="100%"

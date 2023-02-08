@@ -3,6 +3,7 @@ import MiniLayout from "../../components/MiniLayout";
 import Image from "next/image";
 import Gallery from "../../components/Gallery";
 
+import { useTranslation } from "next-i18next";
 const images = [
   "/media/images/campus.jpg",
   "/media/images/campus2.jpg",
@@ -10,9 +11,10 @@ const images = [
   "/media/images/campus4.jpg",
 ];
 export default function OurCampus() {
+  const { t } = useTranslation();
   return (
     <div>
-      <MiniLayout title={"Our Campus"}>
+      <MiniLayout title={t("Our Campus")}>
         <div className={classes.body}>
           <div className={classes.body_img}>
             <Image
@@ -22,11 +24,9 @@ export default function OurCampus() {
             />
           </div>
           <p>
-            We are a multifaceted university in Tashkent, committed to
-            delivering world-class education and research. At Amity University
-            Tashkent Campus, you’ll gain more than just an outstanding
-            education, you’ll be exposed to a world of opportunities and learn
-            from faculty who are masters in their field.
+            {t(
+              "We are a multifaceted university in Tashkent, committed to delivering world-class education and research. At Amity University Tashkent Campus, you’ll gain more than just an outstanding education, you’ll be exposed to a world of opportunities and learn from faculty who are masters in their field."
+            )}
           </p>
           <div className={classes.body_video}>
             <iframe
@@ -40,13 +40,9 @@ export default function OurCampus() {
             ></iframe>
 
             <p>
-              The Campus is located in Tashkent and has its hostel next to the
-              Campus. As you immerse yourself in this community, you will find
-              student resources, services, and a constant stream of fun
-              activities and excursions that will make your studies truly
-              memorable. Watch the video to learn more about facilities and meet
-              our admissions representative to learn more about our degree
-              programs and decide what suits best for you.
+              {t(
+                "The Campus is located in Tashkent and has its hostel next to the Campus. As you immerse yourself in this community, you will find student resources, services, and a constant stream of fun activities and excursions that will make your studies truly memorable. Watch the video to learn more about facilities and meet our admissions representative to learn more about our degree programs and decide what suits best for you."
+              )}
             </p>
           </div>
         </div>

@@ -4,12 +4,13 @@ import MainTitle from "../../Maintitle";
 import MyTab from "../../MyTab";
 import Entry from "../Entry";
 import { useRouter } from "next/router";
-
+import { useTranslation } from "next-i18next";
 import MyButton from "../../MyButton";
 import { GetPrograms, GetSingleProgram } from "@/api";
 
 export default function ProgramBody() {
   const { query } = useRouter();
+  const { t } = useTranslation();
 
   const { data: program } = GetSingleProgram(query?.id, {
     limit: 100,
@@ -53,7 +54,7 @@ export default function ProgramBody() {
           ))}
         </div>
 
-        <MainTitle title={"WHY STUDY THIS COURSE?"} />
+        <MainTitle title={t("WHY STUDY THIS COURSE?")} />
         <div className={classes.body_why}>
           {data2?.map((d: InfoCardProps, i: number) => (
             <InfoCard
@@ -65,7 +66,7 @@ export default function ProgramBody() {
             />
           ))}
         </div>
-        <MainTitle title="ENTRY REQUIREMENTS" />
+        <MainTitle title={t("ENTRY REQUIREMENTS")} />
         <div className={classes.body_entry}>
           <MyTab
             titles={["General", "English language", "Math", "Age"]}
@@ -106,7 +107,7 @@ export default function ProgramBody() {
             ]}
           />
         </div>
-        <MyButton fullWidth title={"Apply"} primary />
+        <MyButton fullWidth title={t("Apply")} primary />
       </div>
     </div>
   );

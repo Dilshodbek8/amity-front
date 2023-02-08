@@ -4,8 +4,10 @@ import parse from "html-react-parser";
 import Navigation from "../../components/Navigation";
 import { useRouter } from "next/router";
 import Loader from "@/components/Loader";
+import { useTranslation } from "next-i18next";
 import { GetSingleNews, GetNewsCategories } from "./../../api";
 export default function News() {
+  const { t } = useTranslation();
   const { data: categories } = GetNewsCategories();
   const links = categories?.data?.map((e: any) => {
     return {
@@ -24,7 +26,7 @@ export default function News() {
   }
   return (
     <>
-      <Header title={"News"} />
+      <Header title={t("News")} />
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_news}>

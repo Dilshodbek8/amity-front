@@ -3,7 +3,9 @@ import Header from "../../components/Header";
 import { useRouter } from "next/router";
 import ProgramBody from "../../components/Programs/ProgramBody";
 import { GetPrograms } from "@/api";
+import { useTranslation } from "next-i18next";
 export default function Programs() {
+  const { t } = useTranslation();
   const { query } = useRouter();
 
   const { data: programs } = GetPrograms({ limit: 100, offset: 0 });
@@ -17,7 +19,7 @@ export default function Programs() {
 
   return (
     <>
-      <Header title={"Programs"} btns={mybtn} />
+      <Header title={t("Programs")} btns={mybtn} />
       <div className="container">
         <ProgramBody />
       </div>

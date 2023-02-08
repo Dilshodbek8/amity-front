@@ -1,4 +1,5 @@
 import classes from "./footer.module.scss";
+import { useTranslation } from "next-i18next";
 import {
   logo,
   fLocation,
@@ -15,6 +16,7 @@ import routes, { Links } from "../routes";
 import Link from "next/link";
 export default function Footer() {
   const links = routes();
+  const { t } = useTranslation();
   return (
     <div className={classes.footer}>
       <div className="container">
@@ -44,7 +46,7 @@ export default function Footer() {
                 <Image src={fTel} width="15" height="15" alt="location" />
                 <p>
                   <a href="tel: +9998712079003">
-                    +9998712079003, +99871 2079008 (Marketing Department)
+                    +9998712079003, +99871 2079008 ({t("Marketing Department")})
                   </a>
                 </p>
               </div>
@@ -52,14 +54,14 @@ export default function Footer() {
                 <Image src={fTel} width="15" height="15" alt="location" />
                 <p>
                   <a href="tel: +998712079006">
-                    +998712079006 +998712079007 (Admission Department)
+                    +998712079006 +998712079007 ({t("Admission Department")})
                   </a>
                 </p>
               </div>
             </div>
             <div className={classes.footer_right}>
               <div>
-                <h2>About Us</h2>
+                <h2>{t("About Us")}</h2>
                 <ul>
                   {links.about?.map((l: Links, i: number) => (
                     <li key={i}>
@@ -69,7 +71,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h2>Admission</h2>
+                <h2>{t("Admission")}</h2>
                 <ul>
                   {links.admission?.map((l: Links, i: number) => (
                     <li key={i}>
@@ -79,7 +81,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h2>Information</h2>
+                <h2>{t("Information")}</h2>
                 <ul>
                   {links.information?.map((l: Links, i: number) => (
                     <li key={i}>

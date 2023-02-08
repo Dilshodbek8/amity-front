@@ -7,15 +7,17 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import cn from "./style.module.scss";
 import MainTitle from "./../../components/Maintitle";
 import { GetFaqs } from "./../../api";
+import { useTranslation } from "next-i18next";
 export default function News() {
+  const { t } = useTranslation();
   let { data: faqs } = GetFaqs({ limit: 100, offset: 0 });
 
   return (
     <>
-      <Header title={"FAQ"} />
+      <Header title={t("FAQ")} />
       <div className="container">
         <div className={cn.body}>
-          <MainTitle title="Frequently Asked Questions" />
+          <MainTitle title={t("Frequently Asked Questions")} />
           {faqs?.data?.data?.map((e: any, i: number) => (
             <Accordion key={i}>
               <AccordionSummary

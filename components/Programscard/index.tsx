@@ -1,6 +1,6 @@
-import React from 'react';
-import ProgramsCard from './Programscard';
-import classes from './programscard.module.scss';
+import React from "react";
+import ProgramsCard from "./Programscard";
+import classes from "./programscard.module.scss";
 interface wrapCardProps {
   data: Array<{
     img: string;

@@ -1,25 +1,25 @@
-import classes from './style.module.scss';
-import Header from '../../components/Header';
-import Navigation from '../../components/Navigation';
-import Gallery from '../../components/Gallery';
+import classes from "./style.module.scss";
+import Header from "../../components/Header";
+import Navigation from "../../components/Navigation";
+import Gallery from "../../components/Gallery";
 export default function News() {
   const links = [
-    { href: '/studentsLife', rel: 'Students Life' },
-    { href: '/campusTour', rel: 'Campus Tour' },
-    { href: '/transportServices', rel: 'Transport Services' },
-    { href: '/campusSafety', rel: 'Campus Safety' },
-    { href: '/campusSports', rel: 'Sports' },
-    { href: '/campusLibrary', rel: 'Library' },
+    { href: "/studentsLife", rel: "Students Life" },
+    { href: "/campusTour", rel: "Campus Tour" },
+    { href: "/transportServices", rel: "Transport Services" },
+    { href: "/campusSafety", rel: "Campus Safety" },
+    { href: "/campusSports", rel: "Sports" },
+    { href: "/campusLibrary", rel: "Library" },
   ];
   const images = [
-    '/media/images/library_1.jpg',
-    '/media/images/library_2.jpg',
-    '/media/images/library_4.jpg',
-    '/media/images/library_5.jpg',
+    "/media/images/library_1.jpg",
+    "/media/images/library_2.jpg",
+    "/media/images/library_4.jpg",
+    "/media/images/library_5.jpg",
   ];
   return (
     <>
-      <Header title={'Students Life'} />
+      <Header title={"Students Life"} />
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_news}>

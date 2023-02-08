@@ -3,10 +3,12 @@ import Header from "../../components/Header";
 import Navigation from "../../components/Navigation";
 import Newscardsingle from "./../../components/Newscard/Newcardsingle";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { GetNews, GetNewsByCateg, GetNewsCategories } from "./../../api";
 import Loader from "@/components/Loader";
 export default function News() {
+  const { t } = useTranslation();
   const { data: categories } = GetNewsCategories();
   const links = categories?.data?.map((e: any) => {
     return {
@@ -22,7 +24,7 @@ export default function News() {
   }
   return (
     <>
-      <Header title={"News"} />
+      <Header title={t("News")} />
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_news}>

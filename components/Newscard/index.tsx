@@ -1,6 +1,6 @@
-import React from 'react';
-import classes from './newscard.module.scss';
-import Newscardsingle from './Newcardsingle';
+import React from "react";
+import classes from "./newscard.module.scss";
+import Newscardsingle from "./Newcardsingle";
 interface NewscardProps {
   datas: Array<{
     date: string;

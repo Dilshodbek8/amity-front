@@ -1,4 +1,4 @@
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 export type BtnProps = {
   primary?: boolean;
   title: string;
@@ -15,7 +15,7 @@ export default function MyButton({
 }: BtnProps) {
   return (
     <>
-      <div className={primary ? 'btn_primary' : 'btn_main'}>
+      <div className={primary ? "btn_primary" : "btn_main"}>
         <Button onClick={onClick} href={href} variant="contained" {...props}>
           {title}
         </Button>

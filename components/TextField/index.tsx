@@ -1,8 +1,8 @@
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 
 type InputProps = {
   radius?: string;
-  label?: string;
+  label?: string | null;
   fullWidth?: boolean;
   error?: boolean;
   errorLabel?: string;
@@ -34,12 +34,12 @@ export default function TextInput({
         rows={rows}
         // {...props}
         sx={{
-          border: 'none',
-          borderRadius: radius ? '15px' : '0',
-          backgroundColor: '#F4F4F8',
-          '& fieldset': {
-            borderColor: '#ffc600',
-            borderRadius: radius ? '15px' : '0',
+          border: "none",
+          borderRadius: radius ? "15px" : "0",
+          backgroundColor: "#F4F4F8",
+          "& fieldset": {
+            borderColor: "#ffc600",
+            borderRadius: radius ? "15px" : "0",
           },
         }}
       />

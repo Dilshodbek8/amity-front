@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from './infocard.module.scss';
+import React from "react";
+import classes from "./infocard.module.scss";
 const Informationcard = () => {
   return (
     <>

@@ -1,5 +1,5 @@
-import classes from './ContactCard.module.scss';
-import Image from 'next/image';
+import classes from "./ContactCard.module.scss";
+import Image from "next/image";
 
 export type CardProps = {
   icon: string;

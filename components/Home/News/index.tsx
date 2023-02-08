@@ -4,7 +4,10 @@ import MySlider from "../../Slider";
 import MainTitle from "../../Maintitle";
 import { GetNews } from "@/api";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
 export default function News() {
+  const { t } = useTranslation();
   let { data: news } = GetNews();
 
   const e = news?.data?.data?.map((dat: any, i: number) => (
@@ -23,7 +26,7 @@ export default function News() {
   return (
     <div className={classes.container}>
       <div className="container">
-        <MainTitle title="CAMPUS EVENT CALENDAR" />
+        <MainTitle title={t("CAMPUS EVENT CALENDAR")} />
         <div className={classes.body}>
           <MySlider show={3} sliders={e} />
         </div>

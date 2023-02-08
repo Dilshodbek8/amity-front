@@ -3,29 +3,33 @@ import MainTitle from "../../Maintitle";
 import ContactCard, { CardProps } from "../ContactCard";
 import TextInput from "../../TextField";
 import MyButton from "../../MyButton";
+import { useTranslation } from "next-i18next";
+
 export default function Contact() {
+  const { t } = useTranslation();
+
   const data = [
     {
       icon: "message.svg",
-      title: "Email us:",
+      title: t("Email us:"),
       text: "admission@amity.uz",
       link: "mailto: admission@amity.uz",
     },
     {
       icon: "tel.svg",
-      title: "Call us:",
+      title: t("Call us:"),
       text: "Tel. +998712079006",
-      link: "tel: +998712079006", 
+      link: "tel: +998712079006",
     },
     {
       icon: "location.svg",
-      title: "Address:",
+      title: t("Address:"),
       text: "Tashkent City, Street Labzak, Building-70, 100028, Uzbekistan",
       link: "https://goo.gl/maps/es5eMqDFqt9UDCcT6",
     },
     {
       icon: "chat.svg",
-      title: "Join us:",
+      title: t("Join us:"),
       text: "@amityTashkent",
       link: "https://t.me/AmityUniversityTashkent",
     },
@@ -34,9 +38,11 @@ export default function Contact() {
     <div className={classes.body}>
       <div className="container">
         <MainTitle
-          title="Get In Touch"
-          minititle="Contact Us"
-          subtitle="If you have any questions, please don’t hesitate to contact us."
+          title={t("Get In Touch")}
+          minititle={t("Contact Us")}
+          subtitle={t(
+            "If you have any questions, please don’t hesitate to contact us."
+          )}
         />
         <div className={classes.cards}>
           <div className={classes.cards_left}>
@@ -55,21 +61,21 @@ export default function Contact() {
               <TextInput fullWidth={true} label={"Your name"} radius={"40"} />
               <TextInput
                 fullWidth={true}
-                label={"Subject Title"}
+                label={t("Subject Title")}
                 radius={"40"}
               />
             </div>
             <div className={classes.cards_right_bottom}>
               <TextInput
-                label={"Your message"}
+                label={t("Your message")}
                 multiline
                 rows={7}
                 radius={"40"}
               />
               <span>
-                <input type="checkbox" id="privacy" />{" "}
+                <input type="checkbox" id="privacy" />
                 <label htmlFor="privacy">
-                  Accept Terms & Conditions and Privacy Policy.
+                  {t("Accept Terms & Conditions and Privacy Policy.")}
                 </label>
               </span>
               <MyButton title={"Send Message"} />

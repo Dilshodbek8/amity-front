@@ -1,46 +1,50 @@
+import { useTranslation } from "next-i18next";
+
 export type Links = {
   rel: string;
   href: any;
 };
 const routes = () => {
+  const { t } = useTranslation();
+
   const links = {
     nav: [
       {
-        rel: "Programs",
+        rel: t("Programs"),
         href: "/programs",
       },
       {
-        rel: "News",
+        rel: t("News"),
         href: "/news",
       },
       {
-        rel: "F.A.Q",
+        rel: t("F.A.Q"),
         href: "/faq",
       },
       {
-        rel: "About",
+        rel: t("About"),
         href: "/about",
       },
       {
-        rel: "Apply",
+        rel: t("Apply"),
         href: "/apply",
       },
       {
-        rel: "Students Life",
+        rel: t("Students Life"),
         href: "/studentsLife",
       },
     ],
     about: [
       {
-        rel: "Amity’s Welcome",
+        rel: t("Amity’s Welcome"),
         href: "/amityWelcome",
       },
       {
-        rel: "Leadership",
+        rel: t("Leadership"),
         href: "/founders",
       },
       {
-        rel: "Our Campus",
+        rel: t("Our Campus"),
         href: "/ourCampus",
       },
       {
@@ -48,25 +52,25 @@ const routes = () => {
         href: "/alumni",
       },
       {
-        rel: "International Campus",
+        rel: t("International Campus"),
         href: "/internationalCampus",
       },
       {
-        rel: "Policies",
+        rel: t("Policies"),
         href: "/policies",
       },
     ],
     admission: [
       {
-        rel: "Application Process",
+        rel: t("Application Process"),
         href: "/applicationProcess",
       },
       {
-        rel: "Scholarship",
+        rel: t("Scholarship"),
         href: "/scholarship",
       },
       {
-        rel: "International Students",
+        rel: t("International Students"),
         href: "/interStudents",
       },
       // {
@@ -76,19 +80,19 @@ const routes = () => {
     ],
     information: [
       {
-        rel: "News & Events",
+        rel: t("News & Events"),
         href: "/news",
       },
       {
-        rel: "Amity Global",
+        rel: t("Amity Global"),
         href: "/amityGlobal",
       },
       {
-        rel: "Students Life",
+        rel: t("Students Life"),
         href: "/studentsLife",
       },
       {
-        rel: "Career Centre",
+        rel: t("Career Centre"),
         href: "/careerCentre",
       },
       // {
@@ -104,7 +108,7 @@ const routes = () => {
       //   href: '/affairs',
       // },
       {
-        rel: "Career with Amity",
+        rel: t("Career with Amity"),
         href: "/career",
       },
     ],

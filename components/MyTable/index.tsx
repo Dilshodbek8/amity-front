@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     fontWeight: 500,
-    fontSize: '20px',
-    backgroundColor: '#002B49',
-    color: '#FFC600',
+    fontSize: "20px",
+    backgroundColor: "#002B49",
+    color: "#FFC600",
     // textAlign: 'left',
   },
   [`&.${tableCellClasses.body}`]: {
@@ -22,12 +22,12 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  color: '#002B49',
+  color: "#002B49",
 
-  '&:nth-of-type(odd)': {
-    backgroundColor: '#F4F4F8',
+  "&:nth-of-type(odd)": {
+    backgroundColor: "#F4F4F8",
   },
-  '&:last-child td, &:last-child th': {
+  "&:last-child td, &:last-child th": {
     border: 0,
   },
 }));
@@ -39,7 +39,7 @@ export type TableProps = {
 
 export default function MyTable({ rows, cols, fields }: TableProps) {
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: "20px" }}>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
@@ -61,8 +61,8 @@ export default function MyTable({ rows, cols, fields }: TableProps) {
                     component="th"
                     scope="row"
                   >
-                    {typeof r[fields[i]] == 'object' ? (
-                      <a style={{ color: 'blue' }} href={r[fields[i]]?.link}>
+                    {typeof r[fields[i]] == "object" ? (
+                      <a style={{ color: "blue" }} href={r[fields[i]]?.link}>
                         {r[fields[i]]?.text}
                       </a>
                     ) : (

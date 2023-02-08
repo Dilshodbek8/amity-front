@@ -1,36 +1,36 @@
-import React from 'react';
-import classes from './maintitle.module.scss';
+import React from "react";
+import classes from "./maintitle.module.scss";
 
 interface MainTitleProps {
   title: string;
-  subtitle?: string;
-  minititle?: string;
-  style?: 'whitetitle' | 'blueborder' | 'ordinary' | 'card';
-  textposition?: 'left' | 'right' | 'center';
+  subtitle?: string | null;
+  minititle?: string | null;
+  style?: "whitetitle" | "blueborder" | "ordinary" | "card";
+  textposition?: "left" | "right" | "center";
 }
 
 const MainTitle = (props: MainTitleProps) => {
   let style;
   let textposition;
 
-  if (props.style == 'blueborder') {
-    style = 'blueborder';
-  } else if (props.style == 'whitetitle') {
-    style = 'whitetitle';
-  } else if (props.style == 'ordinary') {
-    style = 'ordinary';
-  } else if (props.style == 'card') {
-    style = 'card';
+  if (props.style == "blueborder") {
+    style = "blueborder";
+  } else if (props.style == "whitetitle") {
+    style = "whitetitle";
+  } else if (props.style == "ordinary") {
+    style = "ordinary";
+  } else if (props.style == "card") {
+    style = "card";
   } else {
-    style = 'default';
+    style = "default";
   }
 
-  if (props.textposition == 'left') {
-    textposition = 'left';
-  } else if (props.textposition == 'right') {
-    textposition = 'right';
+  if (props.textposition == "left") {
+    textposition = "left";
+  } else if (props.textposition == "right") {
+    textposition = "right";
   } else {
-    textposition = 'center';
+    textposition = "center";
   }
   return (
     <>

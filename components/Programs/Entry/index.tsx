@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import classes from './Entry.module.scss';
+import Image from "next/image";
+import classes from "./Entry.module.scss";
 
 export type EntryProps = {
   title?: string;

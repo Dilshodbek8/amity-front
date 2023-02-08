@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import classes from './InfoCard.module.scss';
+import Image from "next/image";
+import classes from "./InfoCard.module.scss";
 
 export type InfoCardProps = {
   img: string;
@@ -13,9 +13,9 @@ export default function InfoCard({ img, name, title, text }: InfoCardProps) {
       <div className={classes.card_img}>
         <Image
           src={`/media/icons/${img}`}
-          width={'50'}
-          height={'50'}
-          alt={'icon'}
+          width={"50"}
+          height={"50"}
+          alt={"icon"}
         />
       </div>
       <div className={classes.card_text}>

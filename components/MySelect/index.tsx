@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 type SelectProps = {
   radius?: string;
@@ -11,7 +11,7 @@ type SelectProps = {
   options: { label: string; value: string }[];
 };
 export default function MySelect({ radius, label, options }: SelectProps) {
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
@@ -28,12 +28,12 @@ export default function MySelect({ radius, label, options }: SelectProps) {
           label={label}
           onChange={handleChange}
           sx={{
-            border: 'none',
-            borderRadius: radius ? '15px' : '0',
-            backgroundColor: '#F4F4F8',
-            '& fieldset': {
-              borderColor: '#ffc600',
-              borderRadius: radius ? '15px' : '0',
+            border: "none",
+            borderRadius: radius ? "15px" : "0",
+            backgroundColor: "#F4F4F8",
+            "& fieldset": {
+              borderColor: "#ffc600",
+              borderRadius: radius ? "15px" : "0",
             },
           }}
         >
