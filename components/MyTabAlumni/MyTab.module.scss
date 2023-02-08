@@ -1,0 +1,23 @@
+@import "./../../styles/variables.scss";
+.tab {
+  border-bottom: 1px solid $primaryColor;
+}
+
+.asd {
+  background-color: red;
+}
+.body {
+  &_img {
+    img {
+      width: 100%;
+      aspect-ratio: 1.6;
+      object-fit: cover;
+    }
+  }
+  p {
+    color: $mainColor;
+    line-height: 28px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
