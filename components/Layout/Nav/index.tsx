@@ -1,5 +1,5 @@
 import classes from "./nav.module.scss";
-import routes, { Links } from "../routes";
+import routes, { Links } from "../Routes";
 import Image from "next/image";
 import { logo, uz, en, ru, menu } from "./../../../public/media/icons";
 import Link from "next/link";

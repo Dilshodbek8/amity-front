@@ -4,7 +4,7 @@ export type Links = {
   rel: string;
   href: any;
 };
-const routes = () => {
+const Routes = () => {
   const { t } = useTranslation();
 
   const links = {
@@ -116,4 +116,4 @@ const routes = () => {
   return links;
 };
 
-export default routes;
+export default Routes;

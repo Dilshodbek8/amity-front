@@ -1,12 +1,12 @@
-import routes, { Links } from "../routes";
+import Routes, { Links } from "../Routes";
 import classes from "./navModal.module.scss";
 import Link from "next/link";
 import { exit } from "./../../../public/media/icons";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
-const navModal = (toggleDrawer: any) => {
+const NavModal = (toggleDrawer: any) => {
   const { t } = useTranslation();
-  const links = routes();
+  const links = Routes();
   return (
     <div role="presentation" className={classes.nav}>
       <div className={classes.nav__links}>
@@ -59,4 +59,4 @@ const navModal = (toggleDrawer: any) => {
   );
 };
 
-export default navModal;
+export default NavModal;

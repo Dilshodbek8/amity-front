@@ -2,10 +2,11 @@
 
 module.exports = {
   locales: ["ru", "uz", "en"],
+  defaultNamespace: "translation",
   namespaceSeparator: false,
   keySeparator: false,
   useKeysAsDefaultValue: true,
-  output: "src/assets/locales/$LOCALE/$NAMESPACE.json",
+  output: "assets/locales/$LOCALE/$NAMESPACE.json",
   createOldCatalogs: false,
   sort: true,
 };

@@ -12,10 +12,10 @@ import {
   Telegram,
 } from "./../../../public/media/icons";
 import Image from "next/image";
-import routes, { Links } from "../routes";
+import Routes, { Links } from "../Routes";
 import Link from "next/link";
 export default function Footer() {
-  const links = routes();
+  const links = Routes();
   const { t } = useTranslation();
   return (
     <div className={classes.footer}>
