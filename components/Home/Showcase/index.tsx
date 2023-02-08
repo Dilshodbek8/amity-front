@@ -28,6 +28,7 @@ export default function Showcase() {
         title={d?.title?.uz}
         text={d?.title?.uz}
         link={d?.link}
+        href={d?.link}
       />
     </div>
   ));
