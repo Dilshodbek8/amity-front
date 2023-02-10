@@ -7,21 +7,23 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { GetNews, GetNewsByCateg, GetNewsCategories } from "./../../api";
 import Loader from "@/components/Loader";
+import i18next from "i18next";
 export default function News() {
   const { t } = useTranslation();
   const { data: categories } = GetNewsCategories();
+  const curLang = i18next.language;
   const links = categories?.data?.map((e: any) => {
     return {
       href: `/news?category=${e._id}`,
-      rel: e.title.uz,
+      rel: e.title?.[curLang],
     };
   });
   let { query: loc } = useRouter();
   let { data: news } = GetNewsByCateg(loc?.category);
   let { data: allNnews } = GetNews();
-  if (!allNnews?.data?.data.length) {
-    return <Loader />;
-  }
+  // if (!allNnews?.data?.data.length) {
+  //   return <Loader />;
+  // }
   return (
     <>
       <Header title={t("News")} />
@@ -33,8 +35,8 @@ export default function News() {
                   <Link href={`/news/${n._id}`} key={i}>
                     <Newscardsingle
                       date={n?.createdAt}
-                      text={n?.description?.uz}
-                      categ={n?.category?.title?.uz}
+                      text={n?.description?.[curLang]}
+                      categ={n?.category?.title?.[curLang]}
                       img={n?.imagePath?.src}
                     />
                   </Link>
@@ -43,8 +45,8 @@ export default function News() {
                   <Link href={`/news/${n._id}`} key={i}>
                     <Newscardsingle
                       date={n?.createdAt}
-                      text={n?.title?.uz}
-                      categ={n?.category?.title?.uz}
+                      text={n?.title?.[curLang]}
+                      categ={n?.category?.title?.[curLang]}
                       img={n?.imagePath?.src}
                     />
                   </Link>

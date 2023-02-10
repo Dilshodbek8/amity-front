@@ -1,16 +1,18 @@
 import classes from "./Showcase.module.scss";
 import ShowcaseCard, { ShowcaseProps } from "../ShowcaseCard";
 import MySlider from "../../Slider";
+import i18next from "i18next";
+
 import { GetBanners } from "../../../api";
 export default function Showcase() {
   const { data: banners } = GetBanners({});
-
+  const curLang = i18next.language;
   const elems = banners?.data.map((d: any, i: number) => (
     <div className={classes.body} key={i}>
       <ShowcaseCard
         img={d?.photo?.src}
-        title={d?.title?.uz}
-        text={d?.title?.uz}
+        title={d?.title?.[curLang]}
+        text={d?.title?.[curLang]}
         link={d?.link}
         href={d?.link}
       />

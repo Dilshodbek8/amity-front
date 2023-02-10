@@ -4,7 +4,9 @@ import { useRouter } from "next/router";
 import ProgramBody from "../../components/Programs/ProgramBody";
 import { GetPrograms } from "@/api";
 import { useTranslation } from "next-i18next";
+import i18next from "i18next";
 export default function Programs() {
+  const curLang = i18next.language;
   const { t } = useTranslation();
   const { query } = useRouter();
 
@@ -13,7 +15,7 @@ export default function Programs() {
   const mybtn = programs?.data?.data?.map((e: any) => {
     return {
       id: e?._id,
-      title: e?.basicInformations[0]?.title?.uz,
+      title: e?.basicInformations[0]?.title?.[curLang],
     };
   });
 

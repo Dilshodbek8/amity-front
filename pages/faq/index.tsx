@@ -8,8 +8,11 @@ import cn from "./style.module.scss";
 import MainTitle from "./../../components/Maintitle";
 import { GetFaqs } from "./../../api";
 import { useTranslation } from "next-i18next";
+import i18next from "i18next";
+
 export default function News() {
   const { t } = useTranslation();
+  const curLang = i18next.language;
   let { data: faqs } = GetFaqs({ limit: 100, offset: 0 });
 
   return (
@@ -19,16 +22,17 @@ export default function News() {
         <div className={cn.body}>
           <MainTitle title={t("Frequently Asked Questions")} />
           {faqs?.data?.data?.map((e: any, i: number) => (
-            <Accordion key={i}>
+            <Accordion key={i} className={cn.acc}>
               <AccordionSummary
+                className={cn.acc_head}
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id={`panel1a-content`}
               >
-                <Typography>{e.title.uz}</Typography>
+                <Typography>{e.title?.[curLang]}</Typography>
               </AccordionSummary>
-              <AccordionDetails>
-                <Typography>{e.description.uz}</Typography>
+              <AccordionDetails className={cn.acc_body}>
+                <Typography>{e.description?.[curLang]}</Typography>
               </AccordionDetails>
             </Accordion>
           ))}

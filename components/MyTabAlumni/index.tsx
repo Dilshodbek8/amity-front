@@ -5,11 +5,13 @@ import { useState } from "react";
 import classes from "./MyTab.module.scss";
 import { GetAlumni } from "@/api";
 import MainTitle from "../Maintitle";
+import i18next from "i18next";
 export type TabProps = {
   titles: Array<string>;
 };
 export default function MyTabAlumni({ titles }: TabProps) {
   const router = useRouter();
+  const curLang = i18next.language;
   const [tabIndex, setTab] = useState(0);
   const { data: alu } = GetAlumni({ year: titles && titles[tabIndex] });
   const setTabIndex = (newValue: any) => {
@@ -38,8 +40,8 @@ export default function MyTabAlumni({ titles }: TabProps) {
           />
         </div>
         <div className={classes.body_text}>
-          <MainTitle title={alu?.data?.[0]?.title?.uz} />
-          <p>{alu?.data?.[0]?.description?.uz}</p>
+          <MainTitle title={alu?.data?.[0]?.title?.[curLang]} />
+          <p>{alu?.data?.[0]?.description?.[curLang]}</p>
         </div>
       </div>
     </div>

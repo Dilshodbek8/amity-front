@@ -11,25 +11,25 @@ export default function Contact() {
   const data = [
     {
       icon: "message.svg",
-      title: t("Email us:"),
+      title: "Email us:",
       text: "admission@amity.uz",
       link: "mailto: admission@amity.uz",
     },
     {
       icon: "tel.svg",
-      title: t("Call us:"),
+      title: "Call us:",
       text: "Tel. +998712079006",
       link: "tel: +998712079006",
     },
     {
       icon: "location.svg",
-      title: t("Address:"),
+      title: "Address:",
       text: "Tashkent City, Street Labzak, Building-70, 100028, Uzbekistan",
       link: "https://goo.gl/maps/es5eMqDFqt9UDCcT6",
     },
     {
       icon: "chat.svg",
-      title: t("Join us:"),
+      title: "Join us:",
       text: "@amityTashkent",
       link: "https://t.me/AmityUniversityTashkent",
     },

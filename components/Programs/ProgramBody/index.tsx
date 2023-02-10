@@ -7,10 +7,11 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import MyButton from "../../MyButton";
 import { GetPrograms, GetSingleProgram } from "@/api";
-
+import i18next from "i18next";
 export default function ProgramBody() {
   const { query } = useRouter();
   const { t } = useTranslation();
+  const curLang = i18next.language;
 
   const { data: program } = GetSingleProgram(query?.id, {
     limit: 100,
@@ -46,7 +47,9 @@ export default function ProgramBody() {
   ];
   return (
     <div className="container">
-      <MainTitle title={program?.data?.basicInformations?.[0]?.title?.uz} />
+      <MainTitle
+        title={program?.data?.basicInformations?.[0]?.title?.[curLang]}
+      />
       <div className={classes.body}>
         <div className={classes.body_info}>
           {data?.map((d: InfoCardProps, i: number) => (

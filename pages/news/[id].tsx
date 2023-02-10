@@ -6,13 +6,15 @@ import { useRouter } from "next/router";
 import Loader from "@/components/Loader";
 import { useTranslation } from "next-i18next";
 import { GetSingleNews, GetNewsCategories } from "./../../api";
+import i18next from "i18next";
 export default function News() {
+  const curLang = i18next.language;
   const { t } = useTranslation();
   const { data: categories } = GetNewsCategories();
   const links = categories?.data?.map((e: any) => {
     return {
       href: `/news?category=${e._id}`,
-      rel: e.title.uz,
+      rel: e.title?.[curLang],
     };
   });
   let { query } = useRouter();
@@ -37,12 +39,12 @@ export default function News() {
               />
             </div>
             <div className={classes.body_news_text}>
-              <h2>{news?.data?.title?.uz}</h2>
+              <h2>{news?.data?.title?.[curLang]}</h2>
               <div>
                 <span>{`${day}  ${month} ${year}`}</span>
-                <p>{news?.data?.category?.title?.uz}</p>
+                <p>{news?.data?.category?.title?.[curLang]}</p>
               </div>
-              <p>{parse(`${news?.data?.description?.uz}`)}</p>
+              <p>{parse(`${news?.data?.description?.[curLang]}`)}</p>
             </div>
           </div>
 

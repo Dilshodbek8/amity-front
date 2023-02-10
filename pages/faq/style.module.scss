@@ -1,4 +1,19 @@
-@import './../../styles/variables.scss';
+@import "./../../styles/variables.scss";
 .body {
   padding: 30px 0;
+}
+.acc {
+  border-radius: 10px;
+  margin: 10px;
+  overflow: hidden;
+  &_head {
+    background-color: lighten($color: $mainColor, $amount: 5);
+    color: $primaryColor;
+    border-radius: 10px;
+  }
+  &_body {
+    box-shadow: 0 5px 8px #ccc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 }
