@@ -1,21 +1,21 @@
-import classes from "./style.module.scss";
 import Header from "../../components/Header";
+import MainTitle from "@/components/Maintitle";
 import { useRouter } from "next/router";
 import ProgramBody from "../../components/Programs/ProgramBody";
 import { GetPrograms } from "@/api";
 import { useTranslation } from "next-i18next";
 import i18next from "i18next";
 export default function Programs() {
+  const router = useRouter();
   const curLang = i18next.language;
   const { t } = useTranslation();
-  const { query } = useRouter();
 
   const { data: programs } = GetPrograms({ limit: 100, offset: 0 });
 
   const mybtn = programs?.data?.data?.map((e: any) => {
     return {
       id: e?._id,
-      title: e?.basicInformations[0]?.title?.[curLang],
+      title: e?.title?.[curLang],
     };
   });
 
@@ -23,7 +23,11 @@ export default function Programs() {
     <>
       <Header title={t("Programs")} btns={mybtn} />
       <div className="container">
-        <ProgramBody />
+        {router?.query?.id ? (
+          <ProgramBody />
+        ) : (
+          <MainTitle title="Please select program " />
+        )}
       </div>
     </>
   );

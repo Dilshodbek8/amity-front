@@ -12,7 +12,7 @@ export default function InfoCard({ img, name, title, text }: InfoCardProps) {
     <div className={classes.card}>
       <div className={classes.card_img}>
         <Image
-          src={`/media/icons/${img}`}
+          src={`${process.env.NEXT_PUBLIC_API_IMG}/${img}`}
           width={"50"}
           height={"50"}
           alt={"icon"}

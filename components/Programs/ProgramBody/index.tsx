@@ -2,11 +2,11 @@ import classes from "./ProgramBody.module.scss";
 import InfoCard, { InfoCardProps } from "../InfoCard";
 import MainTitle from "../../Maintitle";
 import MyTab from "../../MyTab";
-import Entry from "../Entry";
+import parse from "html-react-parser";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import MyButton from "../../MyButton";
-import { GetPrograms, GetSingleProgram } from "@/api";
+import { GetSingleProgram } from "@/api";
 import i18next from "i18next";
 export default function ProgramBody() {
   const { query } = useRouter();
@@ -18,97 +18,83 @@ export default function ProgramBody() {
     offset: 0,
   });
 
-  const data = [
-    { img: "Cash.svg", name: "Tuition Fees Uzb", title: "32’993’400 UZS" },
-    {
-      img: "Cash.svg",
-      name: "Tuition Fees International",
-      title: "49,637,280 UZS",
-    },
-    { img: "Cash.svg", name: "Duration", title: "3 years" },
-    { img: "Cash.svg", name: "Modules", title: "28" },
-  ];
-  const data2 = [
-    {
-      img: "Cash.svg",
-      name: "Skills-focussed ",
-      text: "Linking theory with practice and with the real-world economy.",
-    },
-    {
-      img: "Cash.svg",
-      name: "Skills-focussed ",
-      text: "Developing skills that are in great demand by employers in the finance industry.",
-    },
-    {
-      img: "Cash.svg",
-      name: "Professionally aligned ",
-      text: "With professional bodies such as ACCA.",
-    },
-  ];
+  const titlesStructure = program?.data?.courseStructure?.level?.map(
+    (e: any) => e?.title?.[curLang]
+  );
+  const bodyStructure = program?.data?.courseStructure?.level?.map((e: any) =>
+    parse(e?.description?.[curLang])
+  );
+  const titlesEntry = program?.data?.entryRequirement?.map(
+    (e: any) => e?.title?.[curLang]
+  );
+  const bodyEntry = program?.data?.entryRequirement?.map((e: any) =>
+    parse(e?.description?.[curLang])
+  );
   return (
     <div className="container">
-      <MainTitle
-        title={program?.data?.basicInformations?.[0]?.title?.[curLang]}
-      />
+      <MainTitle title={program?.data?.title?.[curLang]} />
       <div className={classes.body}>
         <div className={classes.body_info}>
-          {data?.map((d: InfoCardProps, i: number) => (
-            <InfoCard key={i} img={d?.img} name={d?.name} title={d?.title} />
-          ))}
-        </div>
-
-        <MainTitle title={t("WHY STUDY THIS COURSE?")} />
-        <div className={classes.body_why}>
-          {data2?.map((d: InfoCardProps, i: number) => (
+          {program?.data?.basicInformation?.map((d: any, i: number) => (
             <InfoCard
               key={i}
-              img={d?.img}
-              name={d?.name}
-              title={d?.title}
-              text={d?.text}
+              img={d?.imagePath}
+              name={d?.title?.[curLang]}
+              title={d?.description?.[curLang]}
+            />
+          ))}
+        </div>
+        <div className={classes.body_data}>
+          <div className={classes.body_data_left}>
+            <div className={classes.body_desc}>
+              <MainTitle
+                title={t("Course description")}
+                textposition={"left"}
+                style="card"
+              />
+              <p>{parse(`${program?.data?.courseDescription?.[curLang]}`)}</p>
+            </div>
+            <div className={classes.body_how}>
+              <MainTitle
+                style="card"
+                title={t("How you will study")}
+                textposition={"left"}
+              />
+              <p>{parse(`${program?.data?.howYouWillStudy?.[curLang]}`)}</p>
+            </div>
+          </div>
+          <div className={classes.body_data_right}>
+            <div className={classes.body_structure}>
+              <MainTitle
+                title={t("Course structure")}
+                textposition={"left"}
+                style="card"
+              />
+              <p>
+                {parse(
+                  `${program?.data?.courseStructure?.description?.[curLang]}`
+                )}
+              </p>
+            </div>
+            <div>
+              <MyTab titles={titlesStructure} components={bodyStructure} />
+            </div>
+          </div>
+        </div>
+        <MainTitle title={t("WHY STUDY THIS COURSE?")} />
+        <div className={classes.body_why}>
+          {program?.data?.whyStudyThisCourse?.map((d: any, i: number) => (
+            <InfoCard
+              key={i}
+              img={d?.imagePath}
+              name={d?.title?.[curLang]}
+              title={d?.description?.[curLang]}
             />
           ))}
         </div>
         <MainTitle title={t("ENTRY REQUIREMENTS")} />
         <div className={classes.body_entry}>
-          <MyTab
-            titles={["General", "English language", "Math", "Age"]}
-            components={[
-              <Entry
-                key={"1"}
-                title="Applicants should satisfy at a minimum one of the following
-            requirements:"
-                text={[
-                  " Successful completion of an appropriate International  course;",
-                  "  Successful completion of the first year of an appropriate degree  in a recognised Uzbek or similar university;",
-                  " Two GCE A level passes (in any subject excluding mother tongue), plus three GCSE passes at grade C or above including English Language and Mathematics;",
-                  " Successful completion of an appropriate International  course;",
-                ]}
-              />,
-              <Entry
-                key={"2"}
-                title="Applicants should satisfy at a minimum one of the following
-          requirements:"
-                text={[
-                  " Successful completion of an appropriate International  course;",
-                  "  Successful completion of the first year of an appropriate degree  in a recognised Uzbek or similar university;",
-                  " Two GCE A level passes (in any subject excluding mother tongue), plus three GCSE passes at grade C or above including English Language and Mathematics;",
-                  " Successful completion of an appropriate International  course;",
-                ]}
-              />,
-              <Entry
-                key={"3"}
-                title="Applicants should satisfy at a minimum one of the following
-        requirements:"
-                text={[
-                  " Successful completion of an appropriate International  course;",
-                  "  Successful completion of the first year of an appropriate degree  in a recognised Uzbek or similar university;",
-                  " Two GCE A level passes (in any subject excluding mother tongue), plus three GCSE passes at grade C or above including English Language and Mathematics;",
-                  " Successful completion of an appropriate International  course;",
-                ]}
-              />,
-            ]}
-          />
+          <MyTab titles={titlesEntry} components={bodyEntry} />
         </div>
         <MyButton fullWidth title={t("Apply")} primary />
       </div>

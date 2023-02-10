@@ -11,8 +11,8 @@ const ProgramsCard = (props: ProgramsCardProps) => {
   return (
     <>
       <div className={classes.singleCard}>
-        <Image layout="fill" src={props.img} alt={"programs"} />
-        <div className={classes.title}>{props.title}</div>
+        <img src={props?.img} alt={"programs"} />
+        <div className={classes.title}>{props?.title}</div>
       </div>
     </>
   );

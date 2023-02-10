@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .wrapCard {
   display: grid;
@@ -33,7 +33,7 @@
   img {
     transition: 0.4s;
     width: 100%;
-    height: 100%;
+    height: 550px;
     filter: grayscale(100%);
     object-fit: cover;
   }

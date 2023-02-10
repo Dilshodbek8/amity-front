@@ -7,14 +7,15 @@ import classes from "./MyTab.module.scss";
 export type TabProps = {
   titles: Array<string>;
   components: Array<ReactElement>;
+  param?: string;
 };
-export default function MyTab({ titles, components }: TabProps) {
+export default function MyTab({ titles, components, param }: TabProps) {
   const router = useRouter();
   const [tabIndex, setTab] = useState(0);
   const setTabIndex = (newValue: any) => {
     setTab(newValue);
     router.push({
-      query: { tab: newValue },
+      query: { ...router.query, tab: newValue },
     });
   };
   return (

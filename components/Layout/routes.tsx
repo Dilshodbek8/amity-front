@@ -27,7 +27,7 @@ const Routes = () => {
       },
       {
         rel: t("Apply"),
-        href: "/apply",
+        href: "/",
       },
       {
         rel: t("Students Life"),
