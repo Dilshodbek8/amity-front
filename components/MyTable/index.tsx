@@ -17,7 +17,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     // textAlign: 'left',
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: 16,
+    color: "#002B49",
+    fontWeight: 700,
   },
 }));
 
@@ -52,7 +54,7 @@ export default function MyTable({ rows, cols, fields }: TableProps) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {cols.map((r: any, i: number) => (
+            {cols?.map((r: any, i: number) => (
               <StyledTableRow key={i}>
                 {fields.map((f: any, i: number) => (
                   <StyledTableCell
@@ -62,7 +64,15 @@ export default function MyTable({ rows, cols, fields }: TableProps) {
                     scope="row"
                   >
                     {typeof r[fields[i]] == "object" ? (
-                      <a style={{ color: "blue" }} href={r[fields[i]]?.link}>
+                      <a
+                        style={{
+                          color: "#002b49",
+                          padding: "10px 20px",
+                          borderRadius: "50px",
+                          backgroundColor: "#ffc600",
+                        }}
+                        href={r[fields[i]]?.link}
+                      >
                         {r[fields[i]]?.text}
                       </a>
                     ) : (

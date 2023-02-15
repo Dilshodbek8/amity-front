@@ -11,6 +11,9 @@ const routes = {
   alumni: `${route}/alumni`,
   news: `${route}/news`,
   newsOne: `${route}/news/one`,
+  message: `${route}/message`,
+  careerOne: `${route}/career-centre/all`,
+  careerCategory: `${route}/career-centre/category`,
   newsCategories: `${route}/news/categories`,
   newsByCateg: `${route}/news/by-category`,
 };
@@ -27,6 +30,7 @@ export const GetFaqs = (params = {}) => {
 export const GetAlumniYears = (params = {}) => {
   return useQuery(routes.alumniYears, params);
 };
+// get alumni
 export const GetAlumni = (params = {}) => {
   return useQuery(routes.alumni, params);
 };
@@ -46,15 +50,26 @@ export const GetNews = (params = {}) => {
 export const GetNewsCategories = (params = {}) => {
   return useQuery(routes.newsCategories, params);
 };
-
+//  news singl
 export const GetSingleNews = (id, params = {}, options = {}) => {
   return useQuery(`${routes.newsOne}/${id}`, params, options);
 };
-
+// news by categ
 export const GetNewsByCateg = (id, params = {}, options = {}) => {
   return useQuery(`${routes.newsByCateg}/${id}`, params, options);
 };
-
+//  post message
+export const PostMessage = (options = {}) => {
+  return useMutation("post", routes.message, options);
+};
+// career centre categories
+export const GetCareerCategory = (params = {}) => {
+  return useQuery(routes.careerCategory, params);
+};
+//  news singl
+export const GetSingleCateg = (id, params = {}, options = {}) => {
+  return useQuery(`${routes.careerOne}/${id}`, params, options);
+};
 // export const GetUser = (id, params = {}, options = {}) => {
 //   return useQuery(`${routes.users}/${id}`, params, options);
 // };

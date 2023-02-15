@@ -4,10 +4,35 @@ import ContactCard, { CardProps } from "../ContactCard";
 import TextInput from "../../TextField";
 import MyButton from "../../MyButton";
 import { useTranslation } from "next-i18next";
-
+import { PostMessage } from "./../../../api";
+import { useForm, Controller } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Contact() {
   const { t } = useTranslation();
+  const post = PostMessage();
+  const { control, handleSubmit, reset } = useForm({
+    defaultValues: {
+      name: "",
+      phone: "",
+      title: "",
+      message: "",
+      status: "pending",
+    },
+  });
 
+  const onSubmit = (data: any) => {
+    post.mutate(
+      //@ts-ignore
+      { ...data },
+      {
+        onSuccess() {
+          toast.success("Succefully send");
+          reset({ name: "", phone: "", message: "", title: "" });
+        },
+      }
+    );
+  };
   const data = [
     {
       icon: "message.svg",
@@ -36,6 +61,17 @@ export default function Contact() {
   ];
   return (
     <div className={classes.body}>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="container">
         <MainTitle
           title={t("Get In Touch")}
@@ -56,30 +92,72 @@ export default function Contact() {
               />
             ))}
           </div>
-          <div className={classes.cards_right}>
-            <div className={classes.cards_right_top}>
-              <TextInput fullWidth={true} label={"Your name"} radius={"40"} />
-              <TextInput
-                fullWidth={true}
-                label={t("Subject Title")}
-                radius={"40"}
+          <div>
+            <form
+              className={classes.cards_right}
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <div className={classes.cards_right_top}>
+                <Controller
+                  name="name"
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      {...field}
+                      fullWidth={true}
+                      label={"Your name"}
+                      radius={"40"}
+                    />
+                  )}
+                />
+                <Controller
+                  name="title"
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      {...field}
+                      fullWidth={true}
+                      label={t("Subject Title")}
+                      radius={"40"}
+                    />
+                  )}
+                />
+              </div>
+              <Controller
+                name="phone"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    fullWidth={true}
+                    label={t("Phone Number")}
+                    radius={"40"}
+                  />
+                )}
               />
-            </div>
-            <div className={classes.cards_right_bottom}>
-              <TextInput
-                label={t("Your message")}
-                multiline
-                rows={7}
-                radius={"40"}
-              />
-              <span>
-                <input type="checkbox" id="privacy" />
-                <label htmlFor="privacy">
-                  {t("Accept Terms & Conditions and Privacy Policy.")}
-                </label>
-              </span>
-              <MyButton title={"Send Message"} />
-            </div>
+              <div className={classes.cards_right_bottom}>
+                <Controller
+                  name="message"
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      {...field}
+                      label={t("Your message")}
+                      multiline
+                      rows={7}
+                      radius={"40"}
+                    />
+                  )}
+                />
+                {/* <span>
+                  <input type="checkbox" id="privacy" />
+                  <label htmlFor="privacy">
+                    {t("Accept Terms & Conditions and Privacy Policy.")}
+                  </label>
+                </span> */}
+                <MyButton type="submit" title={"Send Message"} />
+              </div>
+            </form>
           </div>
         </div>
       </div>

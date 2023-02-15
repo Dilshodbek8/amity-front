@@ -1,5 +1,5 @@
-import Button from "@mui/material/Button";
-export type BtnProps = {
+import Button, { ButtonProps } from "@mui/material/Button";
+export type BtnProps = ButtonProps & {
   primary?: boolean;
   title: string;
   onClick?: any;

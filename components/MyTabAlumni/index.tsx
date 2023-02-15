@@ -32,7 +32,6 @@ export default function MyTabAlumni({ titles }: TabProps) {
           ))}
         </TabList>
       </Tabs>
-      {/* <div>{JSON.stringify(alu?.data)}</div> */}
       <div className={classes.body}>
         <div className={classes.body_img}>
           <img

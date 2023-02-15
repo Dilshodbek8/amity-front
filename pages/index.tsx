@@ -8,10 +8,7 @@ const Showcase = dynamic(() => import("../components/Home/Showcase"));
 const Programs = dynamic(() => import("../components/Home/Programs"));
 const News = dynamic(() => import("../components/Home/News"));
 const Informationcard = dynamic(() => import("../components/Informationcard"));
-import i18next from "i18next";
 export default function Home() {
-  const { t } = useTranslation();
-
   return (
     <>
       <Head>

@@ -1,5 +1,5 @@
-import { useMutation } from '@tanstack/react-query';
-import { MainRequest } from '../main-request';
+import { useMutation } from "@tanstack/react-query";
+import { MainRequest } from "../main-request";
 
 // method: "post" | "get" | "put" | "patch" | "delete"
 const useGeneralApiMutation = (method, url, options) =>
