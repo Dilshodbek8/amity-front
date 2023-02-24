@@ -27,7 +27,7 @@ const Routes = () => {
       },
       {
         rel: t("Apply"),
-        href: "/",
+        href: "https://amity.uz/admissionmicrosite/login.php",
       },
       {
         rel: t("Students Life"),
