@@ -15,14 +15,14 @@ export default function News() {
     { href: "/campusLibrary", rel: t("Library") },
   ];
   const images = [
-    "/media/images/campus1.JPG",
-    "/media/images/campus2.JPG",
-    "/media/images/campus3.JPG",
-    "/media/images/campus4.JPG",
-    "/media/images/campus5.JPG",
-    "/media/images/campus6.JPG",
-    "/media/images/campus7.JPG",
-    "/media/images/campus8.JPG",
+    "/media/images/campus1.jpg",
+    "/media/images/campus2.jpg",
+    "/media/images/campus3.jpg",
+    "/media/images/campus4.jpg",
+    "/media/images/campus5.jpg",
+    "/media/images/campus6.jpg",
+    "/media/images/campus7.jpg",
+    "/media/images/campus8.jpg",
   ];
   return (
     <>
