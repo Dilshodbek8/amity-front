@@ -10,7 +10,7 @@ export default function CampusCard({ img, title, link }: CardProps) {
     <div className={classes.card}>
       <a href={link}>
         <div className={classes.card_img}>
-          <Image src={`/media/images/${img}`} layout="fill" alt="campus" />
+          <Image src={`/media/images/${img}`} layout="fill" alt="campus"  />
         </div>
         <div className={classes.card_title}>
           <h2>{title}</h2>

@@ -6,11 +6,11 @@ import Gallery from "../../components/Gallery";
 import { useTranslation } from "next-i18next";
 const images = [
   "/media/images/campus1.jpg",
-  "/media/images/campus2.JPG",
   "/media/images/campus3.JPG",
   "/media/images/campus4.JPG",
   "/media/images/campus5.jpg",
   "/media/images/campus6.jpg",
+  "/media/images/campus2.JPG",
   "/media/images/campus7.jpg",
   "/media/images/campus8.jpg",
 ];

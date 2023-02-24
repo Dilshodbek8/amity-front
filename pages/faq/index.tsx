@@ -14,8 +14,6 @@ export default function News() {
   const { t } = useTranslation();
   const curLang = i18next.language;
   let { data: faqs } = GetFaqs({ limit: 100, offset: 0 });
-  console.log(faqs, 11111);
-  console.log(curLang, 22222);
 
   return (
     <>
