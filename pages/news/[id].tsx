@@ -32,6 +32,13 @@ export default function News() {
       <div className="container">
         <div className={classes.body}>
           <div className={classes.body_news}>
+            <div className={classes.body_news_text}>
+              <h2>{news?.data?.title?.[curLang]}</h2>
+              <div>
+                <span className={classes.my}>{`${day}  ${month} ${year}`}</span>
+                <p>{news?.data?.category?.title?.[curLang]}</p>
+              </div>
+            </div>
             <div className={classes.body_news_img}>
               <img
                 src={`${process.env.NEXT_PUBLIC_API_IMG}${news?.data?.imagePath?.src}`}
@@ -39,11 +46,6 @@ export default function News() {
               />
             </div>
             <div className={classes.body_news_text}>
-              <h2>{news?.data?.title?.[curLang]}</h2>
-              <div>
-                <span>{`${day}  ${month} ${year}`}</span>
-                <p>{news?.data?.category?.title?.[curLang]}</p>
-              </div>
               <p>{parse(`${news?.data?.description?.[curLang]}`)}</p>
             </div>
           </div>

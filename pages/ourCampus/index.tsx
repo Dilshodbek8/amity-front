@@ -5,10 +5,14 @@ import Gallery from "../../components/Gallery";
 
 import { useTranslation } from "next-i18next";
 const images = [
-  "/media/images/campus.jpg",
-  "/media/images/campus2.jpg",
-  "/media/images/campus3.jpg",
-  "/media/images/campus4.jpg",
+  "/media/images/campusT-1.JPG",
+  "/media/images/campusT-2.JPG",
+  "/media/images/campusT-3.JPG",
+  "/media/images/campusT-4.JPG",
+  "/media/images/campusT-5.JPG",
+  "/media/images/campusT-6.JPG",
+  "/media/images/campusT-7.JPG",
+  "/media/images/campusT-8.JPG",
 ];
 export default function OurCampus() {
   const { t } = useTranslation();

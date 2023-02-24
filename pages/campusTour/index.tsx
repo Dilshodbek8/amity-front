@@ -8,7 +8,7 @@ export default function News() {
   const { t } = useTranslation();
   const links = [
     { href: "/studentsLife", rel: t("Students Life") },
-    { href: "/campusTour", rel: t("Campus Tour") },
+    // { href: "/campusTour", rel: t("Campus Tour") },
     { href: "/transportServices", rel: t("Transport Services") },
     { href: "/campusSafety", rel: t("Campus Safety") },
     { href: "/campusSports", rel: t("Sports") },

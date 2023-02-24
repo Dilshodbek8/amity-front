@@ -5,7 +5,7 @@ import Gallery from "../../components/Gallery";
 export default function News() {
   const links = [
     { href: "/studentsLife", rel: "Students Life" },
-    { href: "/campusTour", rel: "Campus Tour" },
+    // { href: "/campusTour", rel: "Campus Tour" },
     { href: "/transportServices", rel: "Transport Services" },
     { href: "/campusSafety", rel: "Campus Safety" },
     { href: "/campusSports", rel: "Sports" },

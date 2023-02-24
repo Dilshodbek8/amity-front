@@ -47,18 +47,18 @@ const Routes = () => {
         rel: t("Our Campus"),
         href: "/ourCampus",
       },
-      {
-        rel: "Alumni",
-        href: "/alumni",
-      },
+      // {
+      //   rel: "Alumni",
+      //   href: "/alumni",
+      // },
       {
         rel: t("International Campus"),
         href: "/internationalCampus",
       },
-      {
-        rel: t("Policies"),
-        href: "/policies",
-      },
+      // {
+      //   rel: t("Policies"),
+      //   href: "/policies",
+      // },
     ],
     admission: [
       {
@@ -83,10 +83,10 @@ const Routes = () => {
         rel: t("News & Events"),
         href: "/news",
       },
-      {
-        rel: t("Amity Global"),
-        href: "/amityGlobal",
-      },
+      // {
+      //   rel: t("Amity Global"),
+      //   href: "/amityGlobal",
+      // },
       {
         rel: t("Students Life"),
         href: "/studentsLife",

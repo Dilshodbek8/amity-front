@@ -11,7 +11,7 @@
     gap: 2rem;
     &_img {
       width: 100%;
-      grid-row: 2/3;
+      // grid-row: 2/3;
       img {
         width: 100%;
         // aspect-ratio: 1;
@@ -31,7 +31,7 @@
         font-size: 20px;
         font-weight: 500;
       }
-      span {
+      span.my {
         background-color: $mainColor;
         padding: 3px;
         color: $primaryColor;

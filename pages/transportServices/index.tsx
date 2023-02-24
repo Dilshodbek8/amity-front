@@ -24,8 +24,8 @@ export default function News() {
               )}
             </p>
             <p>
-              {t("Students can use the following buses")}: 78 , 72, 57, 97, 29,
-              35, 52, 151
+              {t("Students can use the following buses")}: 29, 35, 52, 57, 72,
+              78, 97, 151, 152
             </p>
             <p>
               {t("Metro stations of closest distance")}: “Gafur Gulom”, “Alisher
