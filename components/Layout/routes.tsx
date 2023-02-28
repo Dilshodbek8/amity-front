@@ -36,6 +36,10 @@ const Routes = () => {
     ],
     about: [
       {
+        rel: t("About"),
+        href: "/about",
+      },
+      {
         rel: t("Amity’s Welcome"),
         href: "/amityWelcome",
       },
@@ -62,6 +66,10 @@ const Routes = () => {
     ],
     admission: [
       {
+        rel: t("Apply"),
+        href: "https://amity.uz/admissionmicrosite/login.php",
+      },
+      {
         rel: t("Application Process"),
         href: "/applicationProcess",
       },
@@ -79,6 +87,10 @@ const Routes = () => {
       // },
     ],
     information: [
+      {
+        rel: t("F.A.Q"),
+        href: "/faq",
+      },
       {
         rel: t("News & Events"),
         href: "/news",

@@ -7,7 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-
+import classname from "./style.module.scss";
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     fontWeight: 500,
@@ -41,9 +41,9 @@ export type TableProps = {
 
 export default function MyTable({ rows, cols, fields }: TableProps) {
   return (
-    <div style={{ padding: "20px" }}>
+    <div className={classname.body}>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <Table sx={{ minWidth: 850 }} aria-label="customized table">
           <TableHead>
             <TableRow>
               {rows?.map((r: any, i: number) => (
@@ -65,12 +65,12 @@ export default function MyTable({ rows, cols, fields }: TableProps) {
                   >
                     {typeof r[fields[i]] == "object" ? (
                       <a
-                        style={{
-                          color: "#002b49",
-                          padding: "10px 20px",
-                          borderRadius: "50px",
-                          backgroundColor: "#ffc600",
-                        }}
+                        // style={{
+                        //   color: "#002b49",
+                        //   padding: "10px 20px",
+                        //   borderRadius: "50px",
+                        //   backgroundColor: "#ffc600",
+                        // }}
                         href={r[fields[i]]?.link}
                       >
                         {r[fields[i]]?.text}

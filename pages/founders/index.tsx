@@ -228,7 +228,7 @@ export default function Founders() {
 
                 <div className={classes.body_img_full}>
                   <Image
-                    src={`/media/images/atul.jpg`}
+                    src={`/media/images/opa.jpg`}
                     layout="fill"
                     alt="img"
                   />
