@@ -12,7 +12,7 @@ export default function Showcase() {
       <ShowcaseCard
         img={d?.photo?.src}
         title={d?.title?.[curLang]}
-        text={d?.title?.[curLang]}
+        text={d?.description?.[curLang]}
         link={d?.link}
         href={d?.link}
       />

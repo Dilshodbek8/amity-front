@@ -17,7 +17,7 @@ export default function Programs() {
   return (
     <div className={classes.body}>
       <div className="container">
-        <MainTitle title={t("PROGRAM & Academics")} style="blueborder" />
+        <MainTitle title={t("Program & Academics")} style="blueborder" />
         <ProgramsCard data={titles} />
       </div>
     </div>

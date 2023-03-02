@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
-import { MainRequest } from '../main-request';
+import { useQuery } from "@tanstack/react-query";
+import { MainRequest } from "../main-request";
 
 const useGeneralApi = (url, params, options) => {
   return useQuery([url, params], async () => MainRequest.get(url, { params }), {
