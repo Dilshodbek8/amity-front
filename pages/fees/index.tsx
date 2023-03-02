@@ -2,12 +2,36 @@ import classes from "./style.module.scss";
 import Header from "../../components/Header";
 import Navigation from "../../components/Navigation";
 import { useTranslation } from "next-i18next";
+import MyTable from "@/components/MyTable";
 export default function News() {
   const { t } = useTranslation();
   const links = [
     { href: "/applicationProcess", rel: t("Application Process") },
     { href: "/entryRequirements", rel: t("Entry Requirements") },
     { href: "/fees", rel: t("Fees") },
+  ];
+
+  const cols = [
+    {
+      date: "International Foundation Studies",
+      program: "1 year (2 Semesters)",
+      mode: "12,500,000 Uzbek Sums",
+    },
+    {
+      date: "B.Sc.(IT)/ BBA / B.A. (Hons)(Economics)/ B.A. (Tourism Admin)",
+      program: "All Programs",
+      mode: "16,500,000 Uzbek Sums",
+    },
+    {
+      date: "B.Tech. (CSE)",
+      program: "4 years (8 Semesters)",
+      mode: "18,000,000 Uzbek Sums",
+    },
+    {
+      date: "M.Sc.(IT)",
+      program: "2 years (4 Semesters)",
+      mode: "23,825,000 Uzbek Sums",
+    },
   ];
   return (
     <>
@@ -17,110 +41,74 @@ export default function News() {
           <div className={classes.body_card}>
             <p>
               {t(
-                "Amity students are able to choose from an abundance of conventional and contemporary courses that are taught by lecturers who are masters in their field. Guest lecturers who are leading professionals in their industry further enhance each course."
+                "We ensure that our fees are competitive. Amity University Tashkent is proud to offer a range of scholarships to enable students to study at our institution."
               )}
             </p>
             <p>
               {t(
-                "Every graduate leaves Amity University in Tashkent equipped with a wealth of knowledge and practical experience in their field, as well as the relevant skills needed to secure a highly successful career."
+                "The fees are for first year, and they will increase by 5% every year of the course."
               )}
             </p>
-            <p>
-              {t(
-                "Our Admissions Counsellors are here to guide you through the application process. They are extremely knowledgeable about the program on offer and can arrange for you to meet with faculty members to ensure that you make the right choice for your future career."
-              )}
-            </p>
-            <h1>{t("ADMISSION PROCEDURE")}</h1>
-            <p>
-              {t("Click on ")}
-              <a href="">{t("Apply now")}</a>{" "}
-              {t(
-                "to create your personal application profile, fill the application form and and upload scanned version of the following documents mentioned below."
-              )}
-            </p>
-            <p className={classes.body__italic}>
-              {t(" Note")}:
-              {t(
-                "Your personal profile in the Admission system of Amity University in Tashkent is the only way to communicate between you as an applicant and the University. All important information and news regarding your status are sent by and saved in the system. Therefore, we strongly advise you to check your personal account regularly in the admission system for any important updates."
-              )}
-            </p>
-            <h6>{t("International Foundation Studies")}</h6>
-            <ul>
-              <li>
-                {t("Proof of total 11 or 12 years of Secondary Education")}(
-                {t("Diploma/transcript")})
-              </li>
-              <li>{t("Passport copy")}</li>
-              <li>{t("Photography")} 3*4</li>
-              <li>
-                {t("IELTS Certificate")} ({t("Optional")})
-              </li>
-            </ul>
-            <h6>{t("For Undergraduate programs")}:</h6>
 
-            <h6>
-              B.Tech. ({t("CSE")})/B.Sc. ({t("IT")})
-            </h6>
-
-            <ul>
-              <li>
-                {t("Proof of total 12 years of Secondary Education")}(
-                {t("Diploma/transcript")})
-              </li>
-              <li>{t("Passport copy")}</li>
-              <li>{t("Photography")} 3*4</li>
-              <li>
-                {t("IELTS 5 or higher")} ({t("TOEFL 35-45, CEFR B1")})
-              </li>
-            </ul>
-
-            <h6>
-              B.A. (Hons.)({t("Economics")})/ B.A. ({"Tourism Admin"})/BBA
-            </h6>
-
-            <ul>
-              <li>
-                {t("Proof of total 12 years of Secondary Education")}(
-                {t("Diploma/transcript")})
-              </li>
-              <li>{t("Passport copy")}</li>
-              <li>{t("Photography")} 3*4</li>
-              <li>
-                {t("IELTS 5 or higher")} ({t("TOEFL 60-78, CEFR B1")})
-              </li>
-            </ul>
-
-            <h6>{t("For postgraduate programs")}:</h6>
-            <h6>M.Sc. ({t("IT")})</h6>
-            <ul>
-              <li>
-                {t(
-                  "Undergraduate Degree in Computer Science/Information Technology/Electronics/Telecommunications"
-                )}
-              </li>
-              <li>{t("Passport copy")}</li>
-              <li>{t("Photography")} 3*4</li>
-              <li>
-                {t("IELTS 5 or higher")} ({t("TOEFL 35-45, CEFR B1")})
-              </li>
-            </ul>
-
-            <p>
-              {t(
-                "Once completed, your application and admission tests will be assessed by the Admissions Committee and, for successful candidates, an offer will be made."
-              )}
-            </p>
-            <p>
-              {t(
-                "Please review your offer letter carefully as it will outline the program you have been admitted to, the start date, tuition fees, method of payments, refund policy and other important information."
-              )}
-            </p>
-            <p>
-              {t(
-                "The offer letter can be accepted on the payment of a registration and tuition fees."
-              )}
-            </p>
+            <h2>{t("Fees For Degrees Per Semester")}</h2>
+            <MyTable
+              rows={["Program", "Duration", "Fee Per Semester"]}
+              cols={cols}
+              fields={["date", "program", "mode"]}
+            />
+            <div className={classes.body__refund}>
+              <h2>{t("Our Refund Policy")}</h2>
+              <div className={classes.body__refund_card}>
+                <h3>{t("Total Refund")}</h3>
+                <ul>
+                  <li>
+                    {t(
+                      "If the student is unsuccessful in obtaining a student visa."
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "If the offer is withdrawn by Amity University due to ineligibility of the student to join the programme."
+                    )}
+                  </li>
+                  <li>
+                    {t("If the university is unable to provide the programme.")}
+                  </li>
+                </ul>
+              </div>
+              <div className={classes.body__refund_card}>
+                <h3>{t("Partial Refund")}</h3>
+                <ul>
+                  <li>
+                    {t(
+                      "If a student withdraws before the commencement of the semester, all tuition fees paid in advance are refundable except the registration fee."
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "If a student withdraws within the first 14 days from the commencement of semester, the student shall be eligible for a refund of 50% of the tuition fee paid for the respective semester."
+                    )}
+                  </li>
+                </ul>
+              </div>
+              <div className={classes.body__refund_card}>
+                <h3>{t("No Refund")}</h3>
+                <ul>
+                  <li>
+                    {t(
+                      "If a student withdraws after first 14 days from the commencement of any semester, the student shall not be eligible for a refund of the tuition fee or registration fee paid for the relevant semester."
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "Students, who have been either suspended or excluded from the university for disciplinary reasons or for not maintaining minimum standards or academic progression, shall not be eligible for any refund of tuition fees."
+                    )}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
+
           <div className={classes.body_links}>
             <Navigation links={links} />
           </div>

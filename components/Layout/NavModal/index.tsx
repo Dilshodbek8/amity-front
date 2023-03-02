@@ -1,4 +1,4 @@
-import Routes, { Links } from "../Routes";
+import Routes, { Links } from "../routes";
 import classes from "./navModal.module.scss";
 import Link from "next/link";
 import { exit } from "./../../../public/media/icons";

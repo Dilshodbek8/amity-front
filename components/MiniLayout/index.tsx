@@ -1,6 +1,6 @@
 import classes from "./MiniLayout.module.scss";
 import Navigation from "../Navigation";
-import routes from "../Layout/Routes";
+import routes from "../Layout/routes";
 import MainTitle from "../Maintitle";
 import Breadcrumb from "../Breadcrumb";
 export default function MiniLayout({ title, children }: any) {

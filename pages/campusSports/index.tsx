@@ -7,21 +7,16 @@ export default function News() {
   const { t } = useTranslation();
   const links = [
     { href: "/studentsLife", rel: t("Students Life") },
-    { href: "/campusTour", rel: t("Campus Tour") },
     { href: "/transportServices", rel: t("Transport Services") },
     { href: "/campusSafety", rel: t("Campus Safety") },
     { href: "/campusSports", rel: t("Sports") },
     { href: "/campusLibrary", rel: t("Library") },
   ];
   const images = [
-    "/media/images/sport_8.jpg",
-    "/media/images/sport_8.jpg",
-    "/media/images/sport_8.jpg",
-    "/media/images/sport_8.jpg",
-    "/media/images/sport_8.jpg",
-    "/media/images/sport_8.jpg",
-    "/media/images/sport_8.jpg",
-    "/media/images/sport_8.jpg",
+    "/media/images/sport1.jpg",
+    "/media/images/sport3.jpg",
+    "/media/images/sport2.jpg",
+    "/media/images/sport4.jpg",
   ];
   return (
     <>

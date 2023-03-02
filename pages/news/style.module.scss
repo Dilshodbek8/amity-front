@@ -9,5 +9,29 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    
+  }
+}
+@media (max-width: 950px) {
+  .body {
+    grid-template-columns: 1fr;
+    &_news {
+      grid-row: 2/3;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .body {
+    &_news {
+      grid-row: 2/3;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .body {
+    &_news {
+      grid-template-columns: 1fr;
+    }
   }
 }

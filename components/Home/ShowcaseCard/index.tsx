@@ -21,13 +21,13 @@ export default function ShowcaseCard({
         to top,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-      ), url(https://amity.albison.software${img})`,
+      ), url(http://139.59.11.209${img})`,
       }}
     >
       <div className={classes.card_text}>
         <h2>{title}</h2>
         <p>{text}</p>
-        <a href={href}>{link}</a>
+        <a href={href}>Apply</a>
       </div>
     </div>
   );

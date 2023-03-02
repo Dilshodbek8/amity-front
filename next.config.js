@@ -9,7 +9,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["amity.albison.software"],
+    domains: ["139.59.11.209"],
   },
 };
 

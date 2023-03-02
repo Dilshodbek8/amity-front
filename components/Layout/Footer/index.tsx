@@ -12,7 +12,7 @@ import {
   Telegram,
 } from "./../../../public/media/icons";
 import Image from "next/image";
-import Routes, { Links } from "../Routes";
+import Routes, { Links } from "../routes";
 import Link from "next/link";
 export default function Footer() {
   const links = Routes();
@@ -23,7 +23,7 @@ export default function Footer() {
         <div className={classes.footer_container}>
           <div className={classes.footer_top}>
             <div className={classes.footer_left}>
-              <Image src={logo} width="160" height="60" alt="logo" />
+              <Image src={logo} width="160" height="55" alt="logo" />
               <div className={classes.footer_info}>
                 <Image src={fLocation} width="15" height="15" alt="location" />
                 <p>

@@ -1,0 +1,36 @@
+.body {
+}
+@media (max-width: 960px) {
+  .body {
+    overflow-x: scroll !important;
+    width: 750px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 800px) {
+  .body {
+    width: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  .body {
+    width: 500px;
+  }
+}
+
+@media (max-width: 550px) {
+  .body {
+    width: 400px;
+  }
+}
+@media (max-width: 450px) {
+  .body {
+    width: 300px;
+  }
+}
+@media (max-width: 350px) {
+  .body {
+    width: 250px;
+  }
+}

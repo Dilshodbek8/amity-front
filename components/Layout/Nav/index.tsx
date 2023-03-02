@@ -1,5 +1,5 @@
 import classes from "./nav.module.scss";
-import routes, { Links } from "../Routes";
+import routes, { Links } from "../routes";
 import Image from "next/image";
 import { logo, uz, en, ru, menu } from "./../../../public/media/icons";
 import Link from "next/link";
@@ -38,7 +38,7 @@ export default function Nav() {
   return (
     <nav className={classes.nav}>
       <Link href="/">
-        <Image src={logo} width="160" height="60" alt="logo" />
+        <Image src={logo} width="160" height="55" alt="logo" />
       </Link>
       <div className={classes.nav__links}>
         <ul>

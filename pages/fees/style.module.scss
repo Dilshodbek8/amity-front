@@ -1,4 +1,4 @@
-@import './../../styles/variables.scss';
+@import "./../../styles/variables.scss";
 .body {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -25,6 +25,20 @@
       color: rgb(0, 195, 255);
     }
   }
+  &__refund {
+    &_card {
+      margin: 20px 0;
+      h3 {
+        padding: 10px;
+        font-size: 22px;
+      }
+      background-color: rgb(219, 219, 219);
+      padding: 10px;
+      ul {
+        list-style-position: inside;
+      }
+    }
+  }
   p {
     color: rgb(50, 49, 49);
     font-weight: 500;
@@ -33,9 +47,10 @@
     padding: 8px 0;
   }
 
-  h1 {
+  h2 {
     margin: 20px 0 10px;
     font-weight: 500;
+    font-size: 26px;
   }
   h6 {
     margin: 10px 0;

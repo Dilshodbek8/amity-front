@@ -8,21 +8,21 @@ export default function News() {
   const { t } = useTranslation();
   const links = [
     { href: "/studentsLife", rel: t("Students Life") },
-    { href: "/campusTour", rel: t("Campus Tour") },
+    // { href: "/campusTour", rel: t("Campus Tour") },
     { href: "/transportServices", rel: t("Transport Services") },
     { href: "/campusSafety", rel: t("Campus Safety") },
     { href: "/campusSports", rel: t("Sports") },
     { href: "/campusLibrary", rel: t("Library") },
   ];
   const images = [
-    "/media/images/campusT-1.JPG",
-    "/media/images/campusT-2.JPG",
-    "/media/images/campusT-3.JPG",
-    "/media/images/campusT-4.JPG",
-    "/media/images/campusT-5.JPG",
-    "/media/images/campusT-6.JPG",
-    "/media/images/campusT-7.JPG",
-    "/media/images/campusT-8.JPG",
+    "/media/images/campus1.jpg",
+    "/media/images/campus2.jpg",
+    "/media/images/campus3.jpg",
+    "/media/images/campus4.jpg",
+    "/media/images/campus5.jpg",
+    "/media/images/campus6.jpg",
+    "/media/images/campus7.jpg",
+    "/media/images/campus8.jpg",
   ];
   return (
     <>

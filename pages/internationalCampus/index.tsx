@@ -8,11 +8,11 @@ export default function internationalCampus() {
       title: "Amity Singapore",
       link: "https://www.amitysingapore.sg/",
     },
-    {
-      img: "icampus-1.jpg",
-      title: "Nairobi",
-      link: "https://www.amity.edu/nairobi/",
-    },
+    // {
+    //   img: "icampus-1.jpg",
+    //   title: "Nairobi",
+    //   link: "https://www.amity.edu/nairobi/",
+    // },
     {
       img: "icampus-2.jpg",
       title: "Amsterdam",
@@ -28,16 +28,16 @@ export default function internationalCampus() {
       title: "Sharjah",
       link: "https://www.amitysharjah.com/",
     },
-    {
-      img: "icampus-5.jpg",
-      title: "San Francisco",
-      link: "https://amity.uz/amity-education-group/#",
-    },
-    {
-      img: "icampus-6.jpg",
-      title: "Amity New York",
-      link: "https://amity.uz/amity-education-group/#",
-    },
+    // {
+    //   img: "icampus-5.jpg",
+    //   title: "San Francisco",
+    //   link: "https://amity.uz/amity-education-group/#",
+    // },
+    // {
+    //   img: "icampus-6.jpg",
+    //   title: "Amity New York",
+    //   link: "https://amity.uz/amity-education-group/#",
+    // },
     {
       img: "icampus-7.jpg",
       title: "Amity Mauritius",

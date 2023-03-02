@@ -32,8 +32,12 @@ export default function News() {
             </p>
             <h1>{t("ADMISSION PROCEDURE")}</h1>
             <p>
+              Click on{" "}
+              <a href="https://amity.uz/admissionmicrosite/login.php">
+                Apply now
+              </a>
               {t(
-                'Click on <a href="">Apply now</a> to create your personal application profile, fill the application form and and upload scanned version of the following documents mentioned below.'
+                " to create your personal application profile, fill the application form and and upload scanned version of the following documents mentioned below."
               )}
             </p>
             <p className={classes.body__italic}>

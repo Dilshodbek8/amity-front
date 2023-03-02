@@ -27,7 +27,7 @@ const Routes = () => {
       },
       {
         rel: t("Apply"),
-        href: "/",
+        href: "https://amity.uz/admissionmicrosite/login.php",
       },
       {
         rel: t("Students Life"),
@@ -35,6 +35,10 @@ const Routes = () => {
       },
     ],
     about: [
+      {
+        rel: t("About"),
+        href: "/about",
+      },
       {
         rel: t("Amity’s Welcome"),
         href: "/amityWelcome",
@@ -47,20 +51,24 @@ const Routes = () => {
         rel: t("Our Campus"),
         href: "/ourCampus",
       },
-      {
-        rel: "Alumni",
-        href: "/alumni",
-      },
+      // {
+      //   rel: "Alumni",
+      //   href: "/alumni",
+      // },
       {
         rel: t("International Campus"),
         href: "/internationalCampus",
       },
-      {
-        rel: t("Policies"),
-        href: "/policies",
-      },
+      // {
+      //   rel: t("Policies"),
+      //   href: "/policies",
+      // },
     ],
     admission: [
+      {
+        rel: t("Apply"),
+        href: "https://amity.uz/admissionmicrosite/login.php",
+      },
       {
         rel: t("Application Process"),
         href: "/applicationProcess",
@@ -80,13 +88,17 @@ const Routes = () => {
     ],
     information: [
       {
+        rel: t("F.A.Q"),
+        href: "/faq",
+      },
+      {
         rel: t("News & Events"),
         href: "/news",
       },
-      {
-        rel: t("Amity Global"),
-        href: "/amityGlobal",
-      },
+      // {
+      //   rel: t("Amity Global"),
+      //   href: "/amityGlobal",
+      // },
       {
         rel: t("Students Life"),
         href: "/studentsLife",
