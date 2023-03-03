@@ -164,12 +164,15 @@ export default function Founders() {
 
               <div className={classes.body_top}>
                 <div>
-                  <h2>Bobur Abdullaev</h2>
-                  <h3>
+                  <h2>
+                    <span>Mr. Bobur Abdullaev</span>
+                  </h2>
+                  <h4>{t("Director Amity University in Tashkent")}</h4>
+                  <p>
                     {t(
-                      "Amity University Tashkent Campus is established in accordance with the Resolution No.PP-4097 of the President of the Republic of Uzbekistan “On Establishment of Amity University in Tashkent” dated 07 January 2019."
+                      '"Amity University Tashkent Campus is established in accordance with the Resolution No.PP-4097 of the President of the Republic of Uzbekistan “On Establishment of Amity University in Tashkent” dated 07 January 2019.'
                     )}
-                  </h3>
+                  </p>
                   <p>
                     {/* ( */}
                     {t(
@@ -177,8 +180,6 @@ export default function Founders() {
                     )}
                     {/* ) {t("Chairman")}, {t("AKC Group of Companies")} */}
                   </p>
-
-                  <span>{t("Director Amity University in Tashkent")}</span>
                 </div>
                 <div className={classes.body_img}>
                   <Image
@@ -196,7 +197,7 @@ export default function Founders() {
               </p>
               <p>
                 {t(
-                  "I extend my congratulations to all students for joining Amity University Tashkent campus and convey my Best Wishes for your quest for learning, professional development and for your stay in Amity."
+                  'I extend my congratulations to all students for joining Amity University Tashkent campus and convey my Best Wishes for your quest for learning, professional development and for your stay in Amity."'
                 )}
               </p>
             </div>
@@ -210,13 +211,16 @@ export default function Founders() {
                 <div>
                   <h2>Dr. Naina Chaudhary</h2>
                   <h4>
-                    {t(
-                      "Deputy Director – Academics Amity University in Tashkent "
-                    )}
+                    <pre>
+                      {t(
+                        `Deputy Director
+Academics Amity University in Tashkent`
+                      )}
+                    </pre>
                   </h4>
                   <p>
                     {t(
-                      "The university offers foundation, undergraduate and postgraduate programs in the areas of Engineering and Technology, Management and Social Sciences. University offers outcome-based education with industry focused curriculum. The state of art infrastructure apt for teaching learning and research compliments well with the pool of well qualified faculty that ensures to deliver best to the students with the focus on holistic development."
+                      '"The university offers foundation, undergraduate and postgraduate programs in the areas of Engineering and Technology, Management and Social Sciences. University offers outcome-based education with industry focused curriculum. The state of art infrastructure apt for teaching learning and research compliments well with the pool of well qualified faculty that ensures to deliver best to the students with the focus on holistic development."'
                     )}
                   </p>
                   {/* <p>
