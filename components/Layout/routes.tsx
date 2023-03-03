@@ -75,11 +75,11 @@ const Routes = () => {
       },
       {
         rel: t("Scholarship"),
-        href: "/scholarship",
+        href: "/scholarships",
       },
       {
         rel: t("International Students"),
-        href: "/interStudents",
+        href: "/internationalStudents",
       },
       // {
       //   rel: 'Transfer to Amity',

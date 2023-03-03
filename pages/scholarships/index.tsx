@@ -6,16 +6,18 @@ import { useTranslation } from "next-i18next";
 export default function News() {
   const { t } = useTranslation();
   const links = [
-    { href: "/applicationProcess", rel: "Application Process" },
-    { href: "/entry-requirements", rel: "Entry Requirements" },
-    { href: "/transportServices", rel: "Transport Services" },
+    { href: "/applicationProcess", rel: t("Application Process") },
+    { href: "/entryRequirements", rel: t("Entry Requirements") },
     { href: "/fees", rel: "Fees" },
+    { href: "/scholarships", rel: "Scholarships" },
+    { href: "/internationalStudents", rel: "International Students" },
   ];
   const images = [
-    "/media/images/student-life1.jpg",
-    "/media/images/student-life4.jpg",
-    "/media/images/student-life3.jpg",
-    "/media/images/student-life5.jpg",
+    "/media/images/scholarships-5.jpg",
+    "/media/images/scholarships-1.jpg",
+    "/media/images/scholarships-2.jpg",
+    "/media/images/scholarships3-1-3.jpg",
+    "/media/images/scholarships4-1-4.jpg",
   ];
   return (
     <>
@@ -45,11 +47,40 @@ export default function News() {
               </li>
               <li>
                 <h6>{t("Undergraduate Programs")}:</h6>
+                <br />
                 <p>
+                  {t("10% scholarships are awarded to students having")}: <br />
                   {t(
-                    "10% scholarships are awarded to students having: <br /> Outstanding Performance in the Interview and Top result in Written Exam"
+                    "Outstanding Performance in the Interview and Top result in Written Exam"
                   )}
                 </p>
+              </li>
+              <li>
+                <h6>{t("Postgraduate Programs")}:</h6>
+                <br />
+                <p>
+                  {t("10% scholarships are awarded to students having")}: <br />
+                  {t(
+                    "Outstanding Performance in the Interview and Top result in Written Exam"
+                  )}
+                </p>
+              </li>
+            </ul>
+            <h6>{t("Amity Graduate Awards")}</h6>
+            <ul>
+              <li>
+                {t(
+                  "Students who have completed an undergraduate program from Amity University will be awarded a 20% scholarship for postgraduate degree program"
+                )}
+              </li>
+            </ul>
+
+            <h6>{t("Sibling Scholarship")}</h6>
+            <ul>
+              <li>
+                {t(
+                  "When a second sibling joins Amity University Tashkent, a 10% scholarship is awarded to that student."
+                )}
               </li>
             </ul>
           </div>

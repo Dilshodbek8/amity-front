@@ -9,7 +9,9 @@ export default function News() {
   const links = [
     { href: "/applicationProcess", rel: t("Application Process") },
     { href: "/entryRequirements", rel: t("Entry Requirements") },
-    { href: "/fees", rel: t("Fees") },
+    { href: "/fees", rel: "Fees" },
+    { href: "/scholarships", rel: "Scholarships" },
+    { href: "/internationalStudents", rel: "International Students" },
   ];
   const cols = [
     {
